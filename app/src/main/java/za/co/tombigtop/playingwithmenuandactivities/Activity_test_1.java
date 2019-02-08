@@ -26,6 +26,10 @@ public class Activity_test_1 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_1);
+        //so toolbar not showing in this implementation. Makes it pretty redundant...
+        //todo: what is minimum code to set this up showing Processing Sketch?
+        //todo: try copy paste Invisible Deck Practiser code in here
+        //todo: need to add resources (assets)*done and Ketai.jar
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
