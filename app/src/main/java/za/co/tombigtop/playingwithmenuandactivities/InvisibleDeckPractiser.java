@@ -10,7 +10,7 @@ import ketai.ui.*;
 
 import java.util.ArrayList;
 
-public class ColourWheel extends PApplet {
+public class InvisibleDeckPractiser extends PApplet {
 
 
     KetaiGesture gesture;

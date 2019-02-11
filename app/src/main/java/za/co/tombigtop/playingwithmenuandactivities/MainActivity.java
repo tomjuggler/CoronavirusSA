@@ -83,8 +83,9 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_camera) {
-            Log.d("Action", "camera selected");
-            // Handle the camera action
+            Intent intent = new Intent(getApplicationContext(), WebActivity.class);
+            startActivity(intent);
+            return true;
         } else if (id == R.id.nav_gallery) {
             Intent intent = new Intent(getApplicationContext(), Activity_test_1.class);
             startActivity(intent);
