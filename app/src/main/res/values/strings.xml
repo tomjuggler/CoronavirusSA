@@ -1,11 +1,13 @@
 <resources>
-    <string name="app_name">Playing With Menu and Activities</string>
+    <string name="app_name">The Invisible Deck Trick</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Invisible Deck Learning</string>
+    <string name="nav_header_title">Learn the Invisible Deck Trick</string>
     <string name="nav_header_subtitle">circusscientist.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_test_1">Activity_test_1</string>
     <string name="title_activity_web">WebActivity</string>
+    <string name="content_main_content">The invisible deck \n
+    is an amazing trick</string>
 </resources>

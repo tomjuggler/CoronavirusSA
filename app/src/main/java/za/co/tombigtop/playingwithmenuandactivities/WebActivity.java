@@ -28,6 +28,8 @@ public class WebActivity extends Activity {
         mWebView.loadUrl("https://circusscientist.com");
         mWebView.setWebViewClient(new MyWebViewClient());
 
+        //need to have this as backup if no internet connection:
+        //todo: how to check if internet connected and use backup if necessary?
         // LOCAL RESOURCE
         // mWebView.loadUrl("file:///android_asset/index.html");
     }
