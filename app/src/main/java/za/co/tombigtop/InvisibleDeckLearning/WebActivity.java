@@ -1,13 +1,14 @@
-package za.co.tombigtop.playingwithmenuandactivities;
+package za.co.tombigtop.InvisibleDeckLearning;
 
 import android.app.Activity;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
-import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+
+import za.co.tombigtop.InvisibleDeckLearning.R;
 
 public class WebActivity extends Activity {
 

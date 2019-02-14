@@ -1,8 +1,7 @@
-package za.co.tombigtop.playingwithmenuandactivities;
+package za.co.tombigtop.InvisibleDeckLearning;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 
 import android.content.Intent;
 import android.view.Menu;
@@ -12,6 +11,7 @@ import android.widget.FrameLayout;
 import processing.android.PFragment;
 import processing.android.CompatUtils;
 import processing.core.PApplet;
+import za.co.tombigtop.InvisibleDeckLearning.R;
 
 
 public class Activity_test_1 extends AppCompatActivity {

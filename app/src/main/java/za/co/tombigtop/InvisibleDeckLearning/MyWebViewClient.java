@@ -1,4 +1,4 @@
-package za.co.tombigtop.playingwithmenuandactivities;
+package za.co.tombigtop.InvisibleDeckLearning;
 
 import android.content.Intent;
 import android.net.Uri;
