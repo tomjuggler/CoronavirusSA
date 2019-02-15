@@ -236,7 +236,7 @@ public class InvisibleDeckPractiser2 extends PApplet {
 
 
     public void mousePressed() {
-        loop();
+//        loop(); //well this didn't really work
         //reset:
         cards.get(prevCardNum).col = prevCol;
 
@@ -330,7 +330,7 @@ public class InvisibleDeckPractiser2 extends PApplet {
             DeckofCards temp = cards.get(i);
             temp.display();
         }
-        noLoop(); //stop wasting time drawing? well the logcat is certainly less busy!
+//        noLoop(); //stop wasting time drawing? well the logcat is certainly less busy! - less stable though..
     }
 
 
@@ -414,31 +414,31 @@ public class InvisibleDeckPractiser2 extends PApplet {
     }
 
     //Ketai gesture code:
-    public void onFlick(float x, float y, float px, float py, float v) {
-        if (x - px > 300) { //left to right
-//    deckup = true;
-            if (ready) {
-                runOnce = true;
-                background(0);
-//                getAudienceSelection();
-                cardNum += 2;
-                ready = false;
-                newReady = true;
-            } else {
-            }
-        }
-        if (px - x > 300) { //right to left
-            if (ready) {
-                runOnce = true;
-                background(0);
-//                getAudienceSelection();
-                cardNum += 2;
-                ready = false;
-                newReady = true;
-            } else {
-            }
-        }
-    }
+//    public void onFlick(float x, float y, float px, float py, float v) {
+//        if (x - px > 300) { //left to right
+////    deckup = true;
+//            if (ready) {
+//                runOnce = true;
+//                background(0);
+////                getAudienceSelection();
+//                cardNum += 2;
+//                ready = false;
+//                newReady = true;
+//            } else {
+//            }
+//        }
+//        if (px - x > 300) { //right to left
+//            if (ready) {
+//                runOnce = true;
+//                background(0);
+////                getAudienceSelection();
+//                cardNum += 2;
+//                ready = false;
+//                newReady = true;
+//            } else {
+//            }
+//        }
+//    }
 
 }
 //  public int sketchWidth() { return 480; }
