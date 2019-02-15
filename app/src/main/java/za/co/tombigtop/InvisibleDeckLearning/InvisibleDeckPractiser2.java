@@ -1,6 +1,7 @@
 package za.co.tombigtop.InvisibleDeckLearning;
 
 
+import android.util.Log;
 import android.view.MotionEvent;
 
 import java.util.ArrayList;
@@ -18,6 +19,7 @@ public class InvisibleDeckPractiser2 extends PApplet {
 
 
     ArrayList<DeckofCards> cards = new ArrayList<DeckofCards>();
+    ArrayList<DeckofCards> underCard = new ArrayList<DeckofCards>(); //corresponding card
     IntList colour;
     StringList card;
     StringList suit;
@@ -36,7 +38,7 @@ public class InvisibleDeckPractiser2 extends PApplet {
     PImage back;
     boolean deckup = true;
 
-    boolean newReady = true; //mousePressed once only
+    boolean newReady = false; //mousePressed once only
 
     public void setup() {
         size(sketchWidth(), sketchHeight());
@@ -81,23 +83,26 @@ public class InvisibleDeckPractiser2 extends PApplet {
         suit.append("\u2663");        //club\u2663        //3
         a = 100;
 //        getAudienceSelection();
+        int width = 50;
+        int height = 70;
+        int textSize = 22;
 
         for(int i = 0; i < 13; i++) {
 
-            cards.add(new DeckofCards(card.get(i), suit.get(0), i*55, 50, 0, color(255, 0, 0), i, 0));
+            cards.add(new DeckofCards(card.get(i), suit.get(0), i*55, 50, 0, color(255, 0, 0), i, 0, width, height, textSize));
         }
 
         for(int i = 0; i < 13; i++) {
 
-            cards.add(new DeckofCards(card.get(i), suit.get(1), i*55, 150, 0, color(255, 0, 20), i, 1));
+            cards.add(new DeckofCards(card.get(i), suit.get(1), i*55, 150, 0, color(255, 0, 20), i, 1, width, height, textSize));
         }
         for(int i = 0; i < 13; i++) {
 
-            cards.add(new DeckofCards(card.get(i), suit.get(2), i*55, 250, 0, color(0, 0, 40), i, 2));
+            cards.add(new DeckofCards(card.get(i), suit.get(2), i*55, 250, 0, color(0, 0, 40), i, 2, width, height, textSize));
         }
         for(int i = 0; i < 13; i++) {
 
-            cards.add(new DeckofCards(card.get(i), suit.get(3), i*55, 350, 0, color(0, 0, 60), i, 3));
+            cards.add(new DeckofCards(card.get(i), suit.get(3), i*55, 350, 0, color(0, 0, 60), i, 3, width, height, textSize));
         }
 
         front = loadImage("front.png");
@@ -123,22 +128,23 @@ public class InvisibleDeckPractiser2 extends PApplet {
     }
 
     public void draw() {
-        //background(80, 130, 80);
+//        background(80, 130, 80);
 
 
-//        if (cards.size() > 1) {
-//            for (int i = cards.size() - 2; i < cards.size(); i += 1) {
-//                DeckofCards temp = cards.get(i);
+//        if (underCard.size() > 1) {
+//            for (int i = underCard.size() - 2; i < underCard.size(); i += 1) {
+//                DeckofCards temp = underCard.get(i);
 //                temp.display();
 //            }
 //        } else {
-//            for (int i = cards.size() - 1; i < cards.size(); i += 1) {
-//                DeckofCards temp = cards.get(i);
+//            for (int i = underCard.size() - 1; i < underCard.size(); i += 1) {
+//                DeckofCards temp = underCard.get(i);
 //                temp.display();
 //            }
 //        }
     }
 
+    /*
     public void getAudienceSelection() {
         background(80, 0, 80);
         stroke(50);
@@ -186,43 +192,61 @@ public class InvisibleDeckPractiser2 extends PApplet {
         cards.add(new DeckofCards(nam, suite, a, 50, 0, color(col, 0, 0), randomNam, matchedSuite));
         runOnce = false;
     }
+*/
+//    public void keyReleased() {
+//        if (key == ENTER) {
+//            if (ready) {
+//                runOnce = true;
+//                getAudienceSelection();
+//                cardNum += 2;
+//                ready = false;
+//            } else {
+//            } //no mouse pressed yet - avoid errors
+//        }
+//    }
 
-    public void keyReleased() {
-        if (key == ENTER) {
-            if (ready) {
-                runOnce = true;
-                getAudienceSelection();
-                cardNum += 2;
-                ready = false;
-            } else {
-            } //no mouse pressed yet - avoid errors
-        }
-    }
-
-    public void keyPressed() {
-
-        //  if ( mouseY < 266.67 ) {
-        //    q = 1;
-        //  }
-        //
-        //  if ( mouseY > 266.67 ) {
-        //    if (mouseY < 533.33) {
-        //      r = 1;
-        //      println(r);
-        //    }
-        //  }
-        //
-        //  if ( mouseY > 533.33 ) {
-        //    s = 1;
-        //  }
-    }
+//    public void keyPressed() {
+//
+//        //  if ( mouseY < 266.67 ) {
+//        //    q = 1;
+//        //  }
+//        //
+//        //  if ( mouseY > 266.67 ) {
+//        //    if (mouseY < 533.33) {
+//        //      r = 1;
+//        //      println(r);
+//        //    }
+//        //  }
+//        //
+//        //  if ( mouseY > 533.33 ) {
+//        //    s = 1;
+//        //  }
+//    }
 
     public void mousePressed() {
+
+        int namNumOfCard = 0;
+        int suiteNumOfCard= 0;
+        for(int i = 0; i < 52; i++) {
+//            DeckofCards temp = cards.get(i);
+//            temp.display();
+            if (cards.get(i).over()) {
+                Log.d("card selected: ", cards.get(i).nam + " of " + cards.get(i).suite);
+                nam = cards.get(i).nam;
+                suite = cards.get(i).suite;
+                col = cards.get(i).col;
+                namNumOfCard = cards.get(i).namNum;
+                suiteNumOfCard = cards.get(i).suiteNum;
+                newReady = true;
+            }
+        }
+        //old code:
+
         if (newReady) {
-            String nameOfCard = cards.get(0).getName();
-            String suiteOfCard = cards.get(0).getSuite();
-            int namNumOfCard = cards.get(0).getNamNum();
-            int suiteNumOfCard = cards.get(0).getSuiteNum();
+            String nameOfCard = nam;
+            String suiteOfCard = suite;
+//            int namNumOfCard = cards.get(0).getNamNum();
+//            int suiteNumOfCard = cards.get(0).getSuiteNum();
             println(nameOfCard + " " + suiteOfCard + " " + namNumOfCard + " " + suiteNumOfCard);
 
 
@@ -243,8 +267,8 @@ public class InvisibleDeckPractiser2 extends PApplet {
                     deckup = true;
                 }
             }
-            cards.remove(0);
-
+//            underCard.remove(0);
+int textSize = 50;
             if (newNam >= 0) {
                 //get even/odd:
                 if (isOdd(newNam)) {
@@ -252,17 +276,23 @@ public class InvisibleDeckPractiser2 extends PApplet {
                 } else {
                     deckup = true;
                 }
-                cards.add(new DeckofCards(card.get(newNam), suit.get(newSuite), mouseX - 50, mouseY - 75, 0, color(col, 0, 0), newNam, newSuite));
+                DeckofCards temp = new DeckofCards(card.get(newNam), suit.get(newSuite), width / 2 - 80, height / 2 + 50, 0, color(col, 0, 0), newNam, newSuite, 140, 200, textSize);
+                temp.display();
+//                cards.add(new DeckofCards(card.get(newNam), suit.get(newSuite), mouseX - 50, mouseY - 75, 0, color(col, 0, 0), newNam, newSuite));
             } else {
                 println("king");
-                cards.add(new DeckofCards(card.get(12), suit.get(newSuite), mouseX - 50, mouseY - 75, 0, color(col, 0, 0), 12, newSuite));
+                DeckofCards temp = new DeckofCards(card.get(12), suit.get(newSuite), width / 2 - 80, height / 2 + 50, 0, color(col, 0, 0), 12, newSuite, 140, 200, textSize);
+                temp.display();
+//                cards.add(new DeckofCards(card.get(12), suit.get(newSuite), mouseX - 50, mouseY - 75, 0, color(col, 0, 0), 12, newSuite));
             }
             ready = true;
 
+//            underCard.get(0).display();
+
             if (!deckup) {
-                image(back, width / 2 - 70, height / 2 + 50, 140, 200);
+//                image(back, width / 2 - 70, height / 2 + 50, 140, 200);
             } else {
-                image(front, width / 2 - 70, height / 2 + 50, 140, 200);
+//                image(front, width / 2 - 70, height / 2 + 50, 140, 200);
             }
             //Android only: (not working!)
             //  if(mouseY > displayHeight/2){
@@ -271,7 +301,9 @@ public class InvisibleDeckPractiser2 extends PApplet {
             //      cardNum+=2;
             //  }
             newReady = false;
+
         }
+
     }
 
 
@@ -282,8 +314,11 @@ public class InvisibleDeckPractiser2 extends PApplet {
         String suite;
         int namNum;
         int suiteNum;
+        int w;
+        int h;
+        int txtS;
 
-        DeckofCards(String name, String suit, float x, float y, float r, int c, int namNum_, int suiteNum_) {
+        DeckofCards(String name, String suit, float x, float y, float r, int c, int namNum_, int suiteNum_, int w_, int h_, int txtS_) {
             nam = name;
             xpos = x;
             ypos = y;
@@ -292,6 +327,9 @@ public class InvisibleDeckPractiser2 extends PApplet {
             suite = suit;
             namNum = namNum_;
             suiteNum = suiteNum_;
+            w = w_;
+            h = h_;
+            txtS = txtS_;
         }
 
         public String getName() {
@@ -311,15 +349,19 @@ public class InvisibleDeckPractiser2 extends PApplet {
         }
 
         public void display() {
+
             fill(255);
-            rect(xpos, ypos, 50, 75, 10);
-            textSize(22);
+            rect(xpos, ypos, w, h, 10);
+            textSize(txtS);
 
             fill(col);
-            text((nam) + (suite), xpos + 6, ypos + 19);
+            text((nam) + (suite), xpos + w/6, ypos + w/3);
 //            rotate(PApplet.parseInt(rotation)); //does absolutely nothing..
         }
 
+        public boolean over() {
+            return (mouseX>xpos && mouseX<xpos+w&& mouseY>ypos&&mouseY<ypos+h);
+        } // func
 
 
 
@@ -352,7 +394,7 @@ public class InvisibleDeckPractiser2 extends PApplet {
             if (ready) {
                 runOnce = true;
                 background(0);
-                getAudienceSelection();
+//                getAudienceSelection();
                 cardNum += 2;
                 ready = false;
                 newReady = true;
@@ -363,7 +405,7 @@ public class InvisibleDeckPractiser2 extends PApplet {
             if (ready) {
                 runOnce = true;
                 background(0);
-                getAudienceSelection();
+//                getAudienceSelection();
                 cardNum += 2;
                 ready = false;
                 newReady = true;
