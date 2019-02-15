@@ -40,6 +40,10 @@ public class InvisibleDeckPractiser2 extends PApplet {
 
     boolean newReady = false; //mousePressed once only
 
+    //for reset selected card:
+    int prevCol = 200;
+    int prevCardNum = 0;
+
     public void setup() {
         size(sketchWidth(), sketchHeight());
         frameRate(60);
@@ -83,32 +87,33 @@ public class InvisibleDeckPractiser2 extends PApplet {
         suit.append("\u2663");        //club\u2663        //3
         a = 100;
 //        getAudienceSelection();
-        int width = 50;
-        int height = 70;
+        int width = sketchWidth() / 14;
+        int height = sketchHeight() / 12;
         int textSize = 22;
 
-        for(int i = 0; i < 13; i++) {
 
-            cards.add(new DeckofCards(card.get(i), suit.get(0), i*55, 50, 0, color(255, 0, 0), i, 0, width, height, textSize));
+        for (int i = 0; i < 13; i++) {
+
+            cards.add(new DeckofCards(card.get(i), suit.get(0), i * width + 5, 0, 0, color(255, 0, 0), i, 0, width, height, textSize));
         }
 
-        for(int i = 0; i < 13; i++) {
+        for (int i = 0; i < 13; i++) {
 
-            cards.add(new DeckofCards(card.get(i), suit.get(1), i*55, 150, 0, color(255, 0, 20), i, 1, width, height, textSize));
+            cards.add(new DeckofCards(card.get(i), suit.get(1), i * width + 5, height + 10, 0, color(255, 0, 0), i, 1, width, height, textSize));
         }
-        for(int i = 0; i < 13; i++) {
+        for (int i = 0; i < 13; i++) {
 
-            cards.add(new DeckofCards(card.get(i), suit.get(2), i*55, 250, 0, color(0, 0, 40), i, 2, width, height, textSize));
+            cards.add(new DeckofCards(card.get(i), suit.get(2), i * width + 5, height * 2 + 20, 0, color(0, 0, 0), i, 2, width, height, textSize));
         }
-        for(int i = 0; i < 13; i++) {
+        for (int i = 0; i < 13; i++) {
 
-            cards.add(new DeckofCards(card.get(i), suit.get(3), i*55, 350, 0, color(0, 0, 60), i, 3, width, height, textSize));
+            cards.add(new DeckofCards(card.get(i), suit.get(3), i * width + 5, height * 3 + 30, 0, color(0, 0, 0), i, 3, width, height, textSize));
         }
 
         front = loadImage("front.png");
         back = loadImage("back.png");
 
-        for(int i = 0; i < 52; i++) {
+        for (int i = 0; i < 52; i++) {
             DeckofCards temp = cards.get(i);
             temp.display();
         }
@@ -124,10 +129,16 @@ public class InvisibleDeckPractiser2 extends PApplet {
 //            DeckofCards temp = cards.get(i);
 //            temp.display();
 //        }
+        fill(255);
+        textSize(32);
+        text(" Instructions:\n Tap on a card to reveal what is underneath.", 0, sketchHeight() / 2 - 100);
 
     }
 
     public void draw() {
+//        println("sketchWidth is: " + sketchWidth());
+//        println("sketchHeight is: " + sketchHeight());
+
 //        background(80, 130, 80);
 
 
@@ -223,11 +234,15 @@ public class InvisibleDeckPractiser2 extends PApplet {
 //        //  }
 //    }
 
+
     public void mousePressed() {
+        loop();
+        //reset:
+        cards.get(prevCardNum).col = prevCol;
 
         int namNumOfCard = 0;
-        int suiteNumOfCard= 0;
-        for(int i = 0; i < 52; i++) {
+        int suiteNumOfCard = 0;
+        for (int i = 0; i < 52; i++) {
 //            DeckofCards temp = cards.get(i);
 //            temp.display();
             if (cards.get(i).over()) {
@@ -237,6 +252,12 @@ public class InvisibleDeckPractiser2 extends PApplet {
                 col = cards.get(i).col;
                 namNumOfCard = cards.get(i).namNum;
                 suiteNumOfCard = cards.get(i).suiteNum;
+                //for reset selected card colour:
+                prevCol = cards.get(i).col;
+                prevCardNum = i;
+                //show selected with highlight:
+                cards.get(i).col = 160;
+
                 newReady = true;
             }
         }
@@ -268,7 +289,7 @@ public class InvisibleDeckPractiser2 extends PApplet {
                 }
             }
 //            underCard.remove(0);
-int textSize = 50;
+            int textSize = 50;
             if (newNam >= 0) {
                 //get even/odd:
                 if (isOdd(newNam)) {
@@ -303,7 +324,13 @@ int textSize = 50;
             newReady = false;
 
         }
-
+        //reset:
+        //todo: fix bug Ace of Hearts turning white?
+        for (int i = 0; i < 52; i++) {
+            DeckofCards temp = cards.get(i);
+            temp.display();
+        }
+        noLoop(); //stop wasting time drawing? well the logcat is certainly less busy!
     }
 
 
@@ -355,14 +382,13 @@ int textSize = 50;
             textSize(txtS);
 
             fill(col);
-            text((nam) + (suite), xpos + w/6, ypos + w/3);
+            text((nam) + (suite), xpos + w / 6, ypos + w / 3);
 //            rotate(PApplet.parseInt(rotation)); //does absolutely nothing..
         }
 
         public boolean over() {
-            return (mouseX>xpos && mouseX<xpos+w&& mouseY>ypos&&mouseY<ypos+h);
+            return (mouseX > xpos && mouseX < xpos + w && mouseY > ypos && mouseY < ypos + h);
         } // func
-
 
 
         public void updatePosition() {
