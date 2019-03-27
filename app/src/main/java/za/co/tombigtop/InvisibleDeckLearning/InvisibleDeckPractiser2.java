@@ -257,7 +257,12 @@ public class InvisibleDeckPractiser2 extends PApplet {
                 prevCardNum = i;
                 //show selected with highlight:
                 cards.get(i).col = 160;
-
+                //fix ace of hearts being grey all the time:
+                if(i > 0){
+                    cards.get(0).col = color(255, 0, 0);
+                } else{
+                    // n/a
+                }
                 newReady = true;
             }
         }
@@ -324,8 +329,7 @@ public class InvisibleDeckPractiser2 extends PApplet {
             newReady = false;
 
         }
-        //reset:
-        //todo: fix bug Ace of Hearts turning white?
+        //redraw:
         for (int i = 0; i < 52; i++) {
             DeckofCards temp = cards.get(i);
             temp.display();

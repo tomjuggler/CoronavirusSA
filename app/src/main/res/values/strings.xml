@@ -9,6 +9,10 @@
     <string name="title_activity_test_1">Activity_test_1</string>
     <string name="title_activity_test_2">Activity_test_2</string>
     <string name="title_activity_web">WebActivity</string>
-    <string name="content_main_content">The invisible deck \n
-    is an amazing trick</string>
+    <string name="content_main_content">
+        The invisible deck is an amazing trick.\n
+        You can do such a lot with this trick.\n
+        I love it so much! What more could you want. In this app I will attempt to impart some wisdom and also
+        include a new version I have adapted, especially for stage use.
+    </string>
 </resources>
