@@ -41,7 +41,8 @@ public class WebActivity extends Activity {
             //todo: test digitalocean hosted video play in webview.
             // REMOTE RESOURCE:
 //            mWebView.loadUrl("https://circusscientist.com");
-            mWebView.loadUrl("https://www.circusscientist.com/2019/02/10/test-private-post");
+//            mWebView.loadUrl("https://www.circusscientist.com/2019/02/10/test-private-post");
+            mWebView.loadUrl("https://circusscientist.com/invisible/");
             mWebView.setWebViewClient(new MyWebViewClient());
         }
         // REMOTE RESOURCE

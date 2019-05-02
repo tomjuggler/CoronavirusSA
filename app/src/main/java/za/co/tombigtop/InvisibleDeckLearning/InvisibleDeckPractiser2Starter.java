@@ -1,20 +1,18 @@
 package za.co.tombigtop.InvisibleDeckLearning;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-
-import android.content.Intent;
 import android.view.Menu;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
-import processing.android.PFragment;
 import processing.android.CompatUtils;
+import processing.android.PFragment;
 import processing.core.PApplet;
-import za.co.tombigtop.InvisibleDeckLearning.R;
 
 
-public class Activity_test_1 extends AppCompatActivity {
+public class InvisibleDeckPractiser2Starter extends AppCompatActivity {
     //for Processing sketch:
     private PApplet sketch;
 
@@ -36,7 +34,7 @@ public class Activity_test_1 extends AppCompatActivity {
         setContentView(frame, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.MATCH_PARENT));
 
-        sketch = new InvisibleDeckPractiser();
+        sketch = new InvisibleDeckPractiser2();
 
         PFragment fragment = new PFragment(sketch);
         fragment.setView(frame, this);

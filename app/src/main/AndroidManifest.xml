@@ -16,7 +16,7 @@
             android:label="@string/title_activity_web"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
-            android:name="za.co.tombigtop.InvisibleDeckLearning.Activity_test_1"
+            android:name="za.co.tombigtop.InvisibleDeckLearning.InvisibleDeckPractiserStarter"
             android:label="@string/title_activity_test_1"
             android:parentActivityName="za.co.tombigtop.InvisibleDeckLearning.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -25,7 +25,7 @@
                 android:value="za.co.tombigtop.InvisibleDeckLearning.MainActivity" />
         </activity>
         <activity
-            android:name="za.co.tombigtop.InvisibleDeckLearning.Activity_test_2"
+            android:name="za.co.tombigtop.InvisibleDeckLearning.InvisibleDeckPractiser2Starter"
             android:label="@string/title_activity_test_2"
             android:parentActivityName="za.co.tombigtop.InvisibleDeckLearning.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">

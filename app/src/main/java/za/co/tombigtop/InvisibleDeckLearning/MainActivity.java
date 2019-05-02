@@ -11,8 +11,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import za.co.tombigtop.InvisibleDeckLearning.R;
-
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -85,11 +83,11 @@ public class MainActivity extends AppCompatActivity
             startActivity(intent);
             return true;
         } else if (id == R.id.nav_gallery) {
-            Intent intent = new Intent(getApplicationContext(), Activity_test_1.class);
+            Intent intent = new Intent(getApplicationContext(), InvisibleDeckPractiserStarter.class);
             startActivity(intent);
             return true;
         } else if (id == R.id.nav_slideshow) {
-            Intent intent = new Intent(getApplicationContext(), Activity_test_2.class);
+            Intent intent = new Intent(getApplicationContext(), InvisibleDeckPractiser2Starter.class);
             startActivity(intent);
             return true;
         } else if (id == R.id.nav_manage) {
