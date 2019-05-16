@@ -91,7 +91,9 @@ public class MainActivity extends AppCompatActivity
             startActivity(intent);
             return true;
         } else if (id == R.id.nav_manage) {
-
+            Intent intent = new Intent(getApplicationContext(), InvisibleDeckPractiserSpreadStarter.class);
+            startActivity(intent);
+            return true;
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {

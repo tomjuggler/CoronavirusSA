@@ -8,6 +8,7 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_test_1">Activity_test_1</string>
     <string name="title_activity_test_2">Activity_test_2</string>
+    <string name="title_activity_test_3">Activity_test_3</string>
     <string name="title_activity_web">WebActivity</string>
     <string name="content_main_content">
         The invisible deck is an amazing trick.\n
