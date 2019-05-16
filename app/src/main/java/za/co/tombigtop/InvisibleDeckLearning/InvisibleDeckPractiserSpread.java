@@ -1,20 +1,14 @@
 package za.co.tombigtop.InvisibleDeckLearning;
 
+
 import processing.core.*;
 import processing.data.*;
+
+import android.content.res.Resources;
 import android.view.MotionEvent;
+import ketai.ui.*;
 
 import java.util.ArrayList;
-
-//import ketai.ui.*;
-
-
-
-import ketai.ui.KetaiGesture;
-//import processing.core.PApplet;
-//import processing.core.PImage;
-//import processing.data.IntList;
-//import processing.data.StringList;
 
 public class InvisibleDeckPractiserSpread extends PApplet {
 
@@ -39,16 +33,16 @@ public class InvisibleDeckPractiserSpread extends PApplet {
     StringList mixedCard;
     StringList suit;
     StringList mixedSuit;
-    String nam;
-    int col;
-    String suite;
-    int a;
-    int q;
-    int r;
-    int s;
-    boolean runOnce = false;
-    int cardNum = 0;
-    boolean ready = false;
+//    String nam;
+//    int col;
+//    String suite;
+//    int a;
+//    int q;
+//    int r;
+//    int s;
+//    boolean runOnce = false;
+//    int cardNum = 0;
+//    boolean ready = false;
 
     int showNumber = 1;
 
@@ -176,7 +170,7 @@ public class InvisibleDeckPractiserSpread extends PApplet {
         mixedSuit.append("♦");        //diamond♦     //1
         mixedSuit.append("♥");        //heart♥       //0
         //////////////////////////////////////////////////////////////////////////////////////////
-        a = 100;
+//        a = 100;
 
 
         //  for (int i = 0; i < 5; i+= 1)
@@ -203,7 +197,7 @@ public class InvisibleDeckPractiserSpread extends PApplet {
         int numberOfMixedCards = mixedCard.size(); //or mixedColour, mixedSuit. They are all the same size arrays
         for (int i = 0; i < numberOfMixedCards; i++) {
 
-            mixedCards.add(new SingleCard(mixedCard.get(i), mixedSuit.get(i), 0, height / 4 * 2, -PI / 38, color(mixedColour.get(i), 0, 0), i, i));
+            mixedCards.add(new SingleCard(mixedCard.get(i), mixedSuit.get(i), 0, height / 4*2, -PI/38, mixedColour.get(i), i, i));
         }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     }
@@ -267,13 +261,13 @@ public class InvisibleDeckPractiserSpread extends PApplet {
     class SingleCard  {
         float xpos, ypos, rotation;
         String nam;
-        color col;
+        int col;
         String suite;
         int namNum;
         int suiteNum;
 
         //need width, height, textsize here as well
-        SingleCard(String name, String suit, float x, float y, float r, color c, int namNum_, int suiteNum_) {
+        SingleCard(String name, String suit, float x, float y, float r, int c, int namNum_, int suiteNum_) {
             nam = name;
             xpos = x;
             ypos = y;
@@ -284,47 +278,47 @@ public class InvisibleDeckPractiserSpread extends PApplet {
             suiteNum = suiteNum_;
         }
 
-        float getX() {
+        public float getX() {
             return xpos;
         }
 
-        float getY() {
+        public float getY() {
             return ypos;
         }
 
-        String getName() {
+        public String getName() {
             return nam;
         }
 
-        String getSuite() {
+        public String getSuite() {
             return suite;
         }
 
-        int getNamNum() {
+        public int getNamNum() {
             return namNum;
         }
 
-        int getSuiteNum() {
+        public int getSuiteNum() {
             return suiteNum;
         }
 
-        void display() {
+        public void display() {
             rotate(rotation);
             fill(255);
-            rect(xpos, ypos, 50, 75, 5);
+            rect(xpos, ypos, 100, 150, 5);
             textSize(20);
 
-            fill(col);
+            fill(col, 0, 0);
 //    text((nam)+(suite), xpos+12, ypos+38);
             text((nam) + (suite), xpos, ypos + 20); //fan cards better with suite displayed closer to side
 
         }
 
-        void updatePosition() {
+        public void updatePosition() {
             xpos = width + 300;
         }
 
-        boolean over() {
+        public boolean over() {
             int w = 100;
             int h = 150;
             return (mouseX > xpos && mouseX < xpos + w && mouseY > ypos && mouseY < ypos + h);
@@ -333,4 +327,26 @@ public class InvisibleDeckPractiserSpread extends PApplet {
 
 
 }
+//  public int sketchWidth() { return 480; }
+//  public int sketchHeight() { return 640; }
 
+//    //@Override
+//    void settings() {
+////  size(getScreenWidth(), getScreenHeight());
+//        size(sketchWidth(), sketchHeight());
+//    }
+//
+//    public int sketchWidth() { return displayWidth; }
+//    public int sketchHeight() { return displayHeight; }
+//
+//    //very useful functions here:
+//    public static int getScreenWidth() {
+//        return Resources.getSystem().getDisplayMetrics().widthPixels;
+//    }
+//
+//    public static int getScreenHeight() {
+//        return Resources.getSystem().getDisplayMetrics().heightPixels;
+//    }
+//
+//}
+//
