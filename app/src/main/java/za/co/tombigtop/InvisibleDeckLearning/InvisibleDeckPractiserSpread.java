@@ -4,22 +4,17 @@ package za.co.tombigtop.InvisibleDeckLearning;
 import processing.core.*;
 import processing.data.*;
 
-import android.content.res.Resources;
-import android.view.MotionEvent;
-import ketai.ui.*;
+//import android.content.res.Resources;
+//import android.view.MotionEvent;
+//import ketai.ui.*;
 
 import java.util.ArrayList;
 
 public class InvisibleDeckPractiserSpread extends PApplet {
 
 
-    KetaiGesture gesture;
+//    KetaiGesture gesture;
 
-
-    //import android.view.MotionEvent;
-//import ketai.ui.*;
-//
-//KetaiGesture gesture;
 
 //note: now attempting to create mixed card array with new mixedCard, mixedColour and mixedSuit lists
 
@@ -27,12 +22,21 @@ public class InvisibleDeckPractiserSpread extends PApplet {
     ArrayList<SingleCard> cards = new ArrayList<SingleCard>();
     ArrayList<SingleCard> cards2 = new ArrayList<SingleCard>();
     ArrayList<SingleCard> mixedCards = new ArrayList<SingleCard>();
+    ArrayList<SingleCard> mixedCardsOdd = new ArrayList<SingleCard>();
     IntList colour;
-    IntList mixedColour;
+
+
     StringList card;
-    StringList mixedCard;
     StringList suit;
+    //mixedCard:
+    StringList mixedCard;
+    IntList mixedColour;
     StringList mixedSuit;
+
+    StringList mixedCardOdd;
+    IntList mixedColourOdd;
+    StringList mixedSuitOdd;
+    boolean even = true;
 //    String nam;
 //    int col;
 //    String suite;
@@ -48,11 +52,11 @@ public class InvisibleDeckPractiserSpread extends PApplet {
 
     public void setup() {
         size(sketchWidth(), sketchHeight());
+        println("size is: " + sketchWidth() + " " + sketchHeight());
         frameRate(60);
 
         background(80, 130, 80);
         stroke(50);
-
 
 
         card = new StringList();
@@ -169,6 +173,90 @@ public class InvisibleDeckPractiserSpread extends PApplet {
         mixedSuit.append("♥");        //heart♥       //0
         mixedSuit.append("♦");        //diamond♦     //1
         mixedSuit.append("♥");        //heart♥       //0
+
+        mixedCardOdd = new StringList(); //confusing, rename this... denomination?
+        mixedCardOdd.append("Q");
+        mixedCardOdd.append("Q");
+        mixedCardOdd.append("Q");
+        mixedCardOdd.append("Q");
+        mixedCardOdd.append("Q");
+        mixedCardOdd.append("Q");
+        mixedCardOdd.append("Q");
+        mixedCardOdd.append("J");
+        mixedCardOdd.append("J");
+        mixedCardOdd.append("J");
+        mixedCardOdd.append("J");
+        mixedCardOdd.append("J");
+        mixedCardOdd.append("J");
+        mixedCardOdd.append("J");
+        mixedCardOdd.append("J");
+        mixedCardOdd.append("J");
+        mixedCardOdd.append("J");
+        mixedCardOdd.append("J");
+        mixedCardOdd.append("J");
+        mixedCardOdd.append("J");
+        mixedCardOdd.append("J");
+        mixedCardOdd.append("J");
+        mixedCardOdd.append("J");
+        mixedCardOdd.append("J");
+        mixedCardOdd.append("J");
+        mixedCardOdd.append("Q");
+
+        mixedColourOdd = new IntList();
+        mixedColourOdd.append(255);
+        mixedColourOdd.append(255);
+        mixedColourOdd.append(255);
+        mixedColourOdd.append(255);
+        mixedColourOdd.append(255);
+        mixedColourOdd.append(255);
+        mixedColourOdd.append(255);
+        mixedColourOdd.append(255);
+        mixedColourOdd.append(255);
+        mixedColourOdd.append(255);
+        mixedColourOdd.append(255);
+        mixedColourOdd.append(255);
+        mixedColourOdd.append(255);
+        mixedColourOdd.append(255);
+        mixedColourOdd.append(255);
+        mixedColourOdd.append(255);
+        mixedColourOdd.append(255);
+        mixedColourOdd.append(255);
+        mixedColourOdd.append(255);
+        mixedColourOdd.append(255);
+        mixedColourOdd.append(255);
+        mixedColourOdd.append(255);
+        mixedColourOdd.append(255);
+        mixedColourOdd.append(255);
+        mixedColourOdd.append(255);
+        mixedColourOdd.append(255);
+
+        mixedSuitOdd = new StringList();
+        mixedSuitOdd.append("♦");        //diamond♦     //1
+        mixedSuitOdd.append("♥");        //heart♥       //0
+        mixedSuitOdd.append("♦");        //diamond♦     //1
+        mixedSuitOdd.append("♥");        //heart♥       //0
+        mixedSuitOdd.append("♦");        //diamond♦     //1
+        mixedSuitOdd.append("♥");        //heart♥       //0
+        mixedSuitOdd.append("♦");        //diamond♦     //1
+        mixedSuitOdd.append("♥");        //heart♥       //0
+        mixedSuitOdd.append("♦");        //diamond♦     //1
+        mixedSuitOdd.append("♥");        //heart♥       //0
+        mixedSuitOdd.append("♦");        //diamond♦     //1
+        mixedSuitOdd.append("♥");        //heart♥       //0
+        mixedSuitOdd.append("♦");        //diamond♦     //1
+        mixedSuitOdd.append("♥");        //heart♥       //0
+        mixedSuitOdd.append("♦");        //diamond♦     //1
+        mixedSuitOdd.append("♥");        //heart♥       //0
+        mixedSuitOdd.append("♦");        //diamond♦     //1
+        mixedSuitOdd.append("♥");        //heart♥       //0
+        mixedSuitOdd.append("♦");        //diamond♦     //1
+        mixedSuitOdd.append("♥");        //heart♥       //0
+        mixedSuitOdd.append("♦");        //diamond♦     //1
+        mixedSuitOdd.append("♥");        //heart♥       //0
+        mixedSuitOdd.append("♦");        //diamond♦     //1
+        mixedSuitOdd.append("♥");        //heart♥       //0
+        mixedSuitOdd.append("♦");        //diamond♦     //1
+        mixedSuitOdd.append("♥");        //heart♥       //0
         //////////////////////////////////////////////////////////////////////////////////////////
 //        a = 100;
 
@@ -197,7 +285,13 @@ public class InvisibleDeckPractiserSpread extends PApplet {
         int numberOfMixedCards = mixedCard.size(); //or mixedColour, mixedSuit. They are all the same size arrays
         for (int i = 0; i < numberOfMixedCards; i++) {
 
-            mixedCards.add(new SingleCard(mixedCard.get(i), mixedSuit.get(i), 0, height / 4*2, -PI/38, mixedColour.get(i), i, i));
+            mixedCards.add(new SingleCard(mixedCard.get(i), mixedSuit.get(i), 0, height / 4 * 2, -PI / 38, mixedColour.get(i), i, i));
+        }
+
+        int numberOfMixedCardsOdd = mixedCardOdd.size(); //or mixedColour, mixedSuit. They are all the same size arrays
+        for (int i = 0; i < numberOfMixedCardsOdd; i++) {
+
+            mixedCardsOdd.add(new SingleCard(mixedCardOdd.get(i), mixedSuitOdd.get(i), 0, height / 4 * 2, -PI / 38, mixedColourOdd.get(i), i, i));
         }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     }
@@ -221,22 +315,31 @@ public class InvisibleDeckPractiserSpread extends PApplet {
 //   }
 
         rotate(PI / 44 * 15); //get straight again - need to fix this for things to work right
-        translate(300, -300);
-        for (int i = 0; i < mixedCards.size(); i += 1) {
-            mixedCards.get(i).display();
+        translate(sketchWidth()/4, -(sketchHeight()/2));
+        if (even) {
+            for (int i = 0; i < mixedCards.size(); i += 1) {
+                mixedCards.get(i).display();
 //     cards.get(i).xpos++;
 //      SingleCard temp = cards.get(i);
 //      rotate(radians(-4));
 //      temp.display();
 //      println(i);
 //      noLoop();
+            }
+        } else {
+            for (int i = 0; i < mixedCardsOdd.size(); i += 1) {
+                mixedCardsOdd.get(i).display();
+            }
         }
-        showNumber++;
+//        rotate( PI / 44 * 15);
 
-        if (showNumber > cards.size()) {
-            //noLoop();
-            showNumber = 1;
-        }
+
+//        showNumber++;
+//
+//        if (showNumber > cards.size()) {
+//            //noLoop();
+//            showNumber = 1;
+//        }
 // }
 // else{
 //    for (int i = cards.size()-1; i < cards.size (); i+=1) {
@@ -245,20 +348,36 @@ public class InvisibleDeckPractiserSpread extends PApplet {
 //   }
 // }
 
-        if (mousePressed) {
-            for (int i = 0; i < cards2.size(); i += 1) {
-                if (cards2.get(i).over()) {
-                    println(cards2.get(1).getY());
-                } else {
-                    println("no");
-                }
-            }
-        }
+//        if (mousePressed) {
+//            for (int i = 0; i < cards2.size(); i += 1) {
+//                if (cards2.get(i).over()) {
+//                    println(cards2.get(1).getY());
+//                } else {
+//                    println("no");
+//                }
+//            }
+//        }
     }
 
+    public void mousePressed() {
+        if (even) {
+            background(80, 130, 80);
+            even = !even;
+        } else {
+            background(130, 80, 80);
+            even = !even;
+        }
+    }
+//    public boolean surfaceTouchEvent(MotionEvent event) {
+//
+//        //call to keep mouseX, mouseY, etc updated
+//        super.surfaceTouchEvent(event);
+//
+//        //forward event to class for processing
+//        return gesture.surfaceTouchEvent(event);
+//    }
 
-
-    class SingleCard  {
+    class SingleCard {
         float xpos, ypos, rotation;
         String nam;
         int col;
@@ -303,7 +422,10 @@ public class InvisibleDeckPractiserSpread extends PApplet {
         }
 
         public void display() {
+
             rotate(rotation);
+            //todo: text, rect size relative to screen size
+//            text("words here", 20, 20);
             fill(255);
             rect(xpos, ypos, 100, 150, 5);
             textSize(20);
