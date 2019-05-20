@@ -287,13 +287,13 @@ public class InvisibleDeckPractiserSpread extends PApplet {
         int numberOfMixedCards = mixedCard.size(); //or mixedColour, mixedSuit. They are all the same size arrays
         for (int i = 0; i < numberOfMixedCards; i++) {
 
-            mixedCards.add(new SingleCard(mixedCard.get(i), mixedSuit.get(i), 0, height / 4 * 2, -PI / 38, mixedColour.get(i), i, i));
+            mixedCards.add(new SingleCard(mixedCard.get(i), mixedSuit.get(i), 0, height / 4 * 2, -PI/32, mixedColour.get(i), i, i));
         }
 
         int numberOfMixedCardsOdd = mixedCardOdd.size(); //or mixedColour, mixedSuit. They are all the same size arrays
         for (int i = 0; i < numberOfMixedCardsOdd; i++) {
 
-            mixedCardsOdd.add(new SingleCard(mixedCardOdd.get(i), mixedSuitOdd.get(i), 0, height / 4 * 2, -PI / 38, mixedColourOdd.get(i), i, i));
+            mixedCardsOdd.add(new SingleCard(mixedCardOdd.get(i), mixedSuitOdd.get(i), 0, height / 4 * 2, -PI/32, mixedColourOdd.get(i), i, i));
         }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     }
@@ -362,7 +362,7 @@ public class InvisibleDeckPractiserSpread extends PApplet {
     }
 
     public void mousePressed() {
-        if (even) {
+        if (!even) {
             background(80, 130, 80);
             even = !even;
         } else {
