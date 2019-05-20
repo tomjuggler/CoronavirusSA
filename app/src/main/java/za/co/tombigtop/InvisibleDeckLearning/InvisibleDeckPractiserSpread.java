@@ -174,88 +174,90 @@ public class InvisibleDeckPractiserSpread extends PApplet {
         mixedSuit.append("♥");        //heart♥       //0
         mixedSuit.append("♦");        //diamond♦     //1
 
+//////////////////////Odd side:///////////////////////////////////////////////////////////////
+
         mixedCardOdd = new StringList(); //confusing, rename this... denomination?
-        mixedCardOdd.append("Q");
-        mixedCardOdd.append("Q");
-        mixedCardOdd.append("Q");
-        mixedCardOdd.append("Q");
-        mixedCardOdd.append("Q");
-        mixedCardOdd.append("Q");
-        mixedCardOdd.append("Q");
         mixedCardOdd.append("J");
+        mixedCardOdd.append("A");
+        mixedCardOdd.append("A");
+        mixedCardOdd.append("3");
+        mixedCardOdd.append("7");
+        mixedCardOdd.append("9");
+        mixedCardOdd.append("7");
+        mixedCardOdd.append("9");
         mixedCardOdd.append("J");
+        mixedCardOdd.append("7");
+        mixedCardOdd.append("9");
+        mixedCardOdd.append("7");
         mixedCardOdd.append("J");
+        mixedCardOdd.append("9");
+        mixedCardOdd.append("K");
         mixedCardOdd.append("J");
-        mixedCardOdd.append("J");
-        mixedCardOdd.append("J");
-        mixedCardOdd.append("J");
-        mixedCardOdd.append("J");
-        mixedCardOdd.append("J");
-        mixedCardOdd.append("J");
-        mixedCardOdd.append("J");
-        mixedCardOdd.append("J");
-        mixedCardOdd.append("J");
-        mixedCardOdd.append("J");
-        mixedCardOdd.append("J");
-        mixedCardOdd.append("J");
-        mixedCardOdd.append("J");
-        mixedCardOdd.append("J");
-        mixedCardOdd.append("Q");
+        mixedCardOdd.append("K");
+        mixedCardOdd.append("3");
+        mixedCardOdd.append("3");
+        mixedCardOdd.append("5");
+        mixedCardOdd.append("A");
+        mixedCardOdd.append("5");
+        mixedCardOdd.append("3");
+        mixedCardOdd.append("5");
+        mixedCardOdd.append("5");
+        mixedCardOdd.append("A");
 
         mixedColourOdd = new IntList();
+        mixedColourOdd.append(0);
+        mixedColourOdd.append(0);
+        mixedColourOdd.append(255);
+        mixedColourOdd.append(255);
+        mixedColourOdd.append(0);
         mixedColourOdd.append(255);
         mixedColourOdd.append(255);
         mixedColourOdd.append(255);
+        mixedColourOdd.append(0);
+        mixedColourOdd.append(255);
+        mixedColourOdd.append(0);
+        mixedColourOdd.append(0);
+        mixedColourOdd.append(255);
+        mixedColourOdd.append(0);
+        mixedColourOdd.append(0);
+        mixedColourOdd.append(255);
+        mixedColourOdd.append(0);
+        mixedColourOdd.append(0);
+        mixedColourOdd.append(0);
+        mixedColourOdd.append(255);
+        mixedColourOdd.append(0);
+        mixedColourOdd.append(0);
         mixedColourOdd.append(255);
         mixedColourOdd.append(255);
-        mixedColourOdd.append(255);
-        mixedColourOdd.append(255);
-        mixedColourOdd.append(255);
-        mixedColourOdd.append(255);
-        mixedColourOdd.append(255);
-        mixedColourOdd.append(255);
-        mixedColourOdd.append(255);
-        mixedColourOdd.append(255);
-        mixedColourOdd.append(255);
-        mixedColourOdd.append(255);
-        mixedColourOdd.append(255);
-        mixedColourOdd.append(255);
-        mixedColourOdd.append(255);
-        mixedColourOdd.append(255);
-        mixedColourOdd.append(255);
-        mixedColourOdd.append(255);
-        mixedColourOdd.append(255);
-        mixedColourOdd.append(255);
-        mixedColourOdd.append(255);
-        mixedColourOdd.append(255);
+        mixedColourOdd.append(0);
         mixedColourOdd.append(255);
 
         mixedSuitOdd = new StringList();
+        mixedSuitOdd.append("♣");        //club♣        //3
+        mixedSuitOdd.append("♠");        //spade♠       //2
+        mixedSuitOdd.append("♦");        //diamond♦     //1
+        mixedSuitOdd.append("♦");        //diamond♦     //1
+        mixedSuitOdd.append("♠");        //spade♠       //2
+        mixedSuitOdd.append("♦");        //diamond♦     //1
         mixedSuitOdd.append("♦");        //diamond♦     //1
         mixedSuitOdd.append("♥");        //heart♥       //0
-        mixedSuitOdd.append("♦");        //diamond♦     //1
+        mixedSuitOdd.append("♠");        //spade♠       //2
         mixedSuitOdd.append("♥");        //heart♥       //0
+        mixedSuitOdd.append("♠");        //spade♠       //2
+        mixedSuitOdd.append("♣");        //club♣        //3
         mixedSuitOdd.append("♦");        //diamond♦     //1
+        mixedSuitOdd.append("♣");        //club♣        //3
+        mixedSuitOdd.append("♠");        //spade♠       //2
         mixedSuitOdd.append("♥");        //heart♥       //0
+        mixedSuitOdd.append("♣");        //club♣        //3
+        mixedSuitOdd.append("♠");        //spade♠       //2
+        mixedSuitOdd.append("♣");        //club♣        //3
         mixedSuitOdd.append("♦");        //diamond♦     //1
+        mixedSuitOdd.append("♣");        //club♣        //3
+        mixedSuitOdd.append("♠");        //spade♠       //2
         mixedSuitOdd.append("♥");        //heart♥       //0
-        mixedSuitOdd.append("♦");        //diamond♦     //1
         mixedSuitOdd.append("♥");        //heart♥       //0
-        mixedSuitOdd.append("♦");        //diamond♦     //1
-        mixedSuitOdd.append("♥");        //heart♥       //0
-        mixedSuitOdd.append("♦");        //diamond♦     //1
-        mixedSuitOdd.append("♥");        //heart♥       //0
-        mixedSuitOdd.append("♦");        //diamond♦     //1
-        mixedSuitOdd.append("♥");        //heart♥       //0
-        mixedSuitOdd.append("♦");        //diamond♦     //1
-        mixedSuitOdd.append("♥");        //heart♥       //0
-        mixedSuitOdd.append("♦");        //diamond♦     //1
-        mixedSuitOdd.append("♥");        //heart♥       //0
-        mixedSuitOdd.append("♦");        //diamond♦     //1
-        mixedSuitOdd.append("♥");        //heart♥       //0
-        mixedSuitOdd.append("♦");        //diamond♦     //1
-        mixedSuitOdd.append("♥");        //heart♥       //0
-        mixedSuitOdd.append("♦");        //diamond♦     //1
+        mixedSuitOdd.append("♣");        //club♣        //3
         mixedSuitOdd.append("♥");        //heart♥       //0
         //////////////////////////////////////////////////////////////////////////////////////////
 //        a = 100;
