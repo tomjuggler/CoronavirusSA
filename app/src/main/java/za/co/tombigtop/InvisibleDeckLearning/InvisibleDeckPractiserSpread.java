@@ -91,88 +91,88 @@ public class InvisibleDeckPractiserSpread extends PApplet {
 
 /////////////////////////////////////////mixedCards/////////////////////////////////////////
         mixedCard = new StringList(); //confusing, rename this... denomination?
-        mixedCard.append("A");
+        mixedCard.append("Q");
+        mixedCard.append("8");
+        mixedCard.append("8");
+        mixedCard.append("10");
+        mixedCard.append("8");
+        mixedCard.append("Q");
+        mixedCard.append("8");
+        mixedCard.append("10");
+        mixedCard.append("10");
         mixedCard.append("K");
-        mixedCard.append("A");
+        mixedCard.append("2");
         mixedCard.append("K");
-        mixedCard.append("A");
-        mixedCard.append("K");
-        mixedCard.append("A");
-        mixedCard.append("K");
-        mixedCard.append("A");
-        mixedCard.append("K");
-        mixedCard.append("A");
-        mixedCard.append("K");
-        mixedCard.append("A");
-        mixedCard.append("K");
-        mixedCard.append("A");
-        mixedCard.append("K");
-        mixedCard.append("A");
-        mixedCard.append("K");
-        mixedCard.append("A");
-        mixedCard.append("K");
-        mixedCard.append("A");
-        mixedCard.append("K");
-        mixedCard.append("A");
-        mixedCard.append("K");
-        mixedCard.append("A");
-        mixedCard.append("K");
+        mixedCard.append("4");
+        mixedCard.append("2");
+        mixedCard.append("6");
+        mixedCard.append("4");
+        mixedCard.append("6");
+        mixedCard.append("2");
+        mixedCard.append("4");
+        mixedCard.append("6");
+        mixedCard.append("4");
+        mixedCard.append("6");
+        mixedCard.append("10");
+        mixedCard.append("Q");
+        mixedCard.append("Q");
+        mixedCard.append("2");
 
         mixedColour = new IntList();
+        mixedColour.append(0);
+        mixedColour.append(255);
+        mixedColour.append(0);
+        mixedColour.append(0);
+        mixedColour.append(255);
+        mixedColour.append(255);
+        mixedColour.append(0);
         mixedColour.append(255);
         mixedColour.append(255);
         mixedColour.append(255);
+        mixedColour.append(0);
         mixedColour.append(255);
         mixedColour.append(255);
+        mixedColour.append(0);
         mixedColour.append(255);
         mixedColour.append(255);
+        mixedColour.append(0);
         mixedColour.append(255);
+        mixedColour.append(0);
+        mixedColour.append(0);
+        mixedColour.append(0);
         mixedColour.append(255);
-        mixedColour.append(255);
-        mixedColour.append(255);
-        mixedColour.append(255);
-        mixedColour.append(255);
-        mixedColour.append(255);
-        mixedColour.append(255);
-        mixedColour.append(255);
-        mixedColour.append(255);
-        mixedColour.append(255);
-        mixedColour.append(255);
-        mixedColour.append(255);
-        mixedColour.append(255);
-        mixedColour.append(255);
-        mixedColour.append(255);
-        mixedColour.append(255);
+        mixedColour.append(0);
+        mixedColour.append(0);
         mixedColour.append(255);
         mixedColour.append(255);
 
         mixedSuit = new StringList();
+        mixedSuit.append("♠");        //spade♠       //2
+        mixedSuit.append("♦");        //diamond♦     //1
+        mixedSuit.append("♠");        //spade♠       //2
+        mixedSuit.append("♠");        //spade♠       //2
+        mixedSuit.append("♥");        //heart♥       //0
+        mixedSuit.append("♦");        //diamond♦     //1
+        mixedSuit.append("♣");        //club♣        //3
         mixedSuit.append("♦");        //diamond♦     //1
         mixedSuit.append("♥");        //heart♥       //0
         mixedSuit.append("♦");        //diamond♦     //1
+        mixedSuit.append("♠");        //spade♠       //2
         mixedSuit.append("♥");        //heart♥       //0
         mixedSuit.append("♦");        //diamond♦     //1
-        mixedSuit.append("♥");        //heart♥       //0
+        mixedSuit.append("♣");        //club♣        //3
         mixedSuit.append("♦");        //diamond♦     //1
         mixedSuit.append("♥");        //heart♥       //0
-        mixedSuit.append("♦");        //diamond♦     //1
+        mixedSuit.append("♠");        //spade♠       //2
+        mixedSuit.append("♥");        //heart♥       //0
+        mixedSuit.append("♠");        //spade♠       //2
+        mixedSuit.append("♣");        //club♣        //3
+        mixedSuit.append("♣");        //club♣        //3
+        mixedSuit.append("♥");        //heart♥       //0
+        mixedSuit.append("♣");        //club♣        //3
+        mixedSuit.append("♣");        //club♣        //3
         mixedSuit.append("♥");        //heart♥       //0
         mixedSuit.append("♦");        //diamond♦     //1
-        mixedSuit.append("♥");        //heart♥       //0
-        mixedSuit.append("♦");        //diamond♦     //1
-        mixedSuit.append("♥");        //heart♥       //0
-        mixedSuit.append("♦");        //diamond♦     //1
-        mixedSuit.append("♥");        //heart♥       //0
-        mixedSuit.append("♦");        //diamond♦     //1
-        mixedSuit.append("♥");        //heart♥       //0
-        mixedSuit.append("♦");        //diamond♦     //1
-        mixedSuit.append("♥");        //heart♥       //0
-        mixedSuit.append("♦");        //diamond♦     //1
-        mixedSuit.append("♥");        //heart♥       //0
-        mixedSuit.append("♦");        //diamond♦     //1
-        mixedSuit.append("♥");        //heart♥       //0
-        mixedSuit.append("♦");        //diamond♦     //1
-        mixedSuit.append("♥");        //heart♥       //0
 
         mixedCardOdd = new StringList(); //confusing, rename this... denomination?
         mixedCardOdd.append("Q");
