@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name">The Invisible Deck Trick</string>
+    <string name="app_name">CoronaVirusSA</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Learn the Invisible Deck Trick</string>
+    <string name="nav_header_title">Stats and Information about corvid19</string>
     <string name="nav_header_subtitle">circusscientist.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
@@ -11,9 +11,9 @@
     <string name="title_activity_test_3">Activity_test_3</string>
     <string name="title_activity_web">WebActivity</string>
     <string name="content_main_content">
-        The invisible deck is an amazing trick.\n
-        You can do such a lot with this trick.\n
-        I love it so much! What more could you want. In this app I will attempt to impart some wisdom and also
-        include a new version I have adapted, especially for stage use.
+        The Corona Virus is a dangerous pandemic.\n
+        All our statistics are from the University of Pretoria.\n
+        And updated daily.\n
+        don\'t forget to wash your hands guys and stay safe
     </string>
 </resources>

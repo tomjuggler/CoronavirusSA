@@ -5,17 +5,17 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_web_black_24dp"
-            android:title="webView" />
-        <item
             android:id="@+id/nav_gallery"
             android:icon="@drawable/ic_format_shapes_black_24dp"
-            android:title="Invisible Deck Practiser" />
+            android:title="MAP" />
         <item
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="Invisible Deck All Cards View" />
+            android:title="SPREAD" />
+        <item
+            android:id="@+id/nav_camera"
+            android:icon="@drawable/ic_web_black_24dp"
+            android:title="NICD Official Website" />
         <item
             android:id="@+id/nav_manage"
             android:icon="@drawable/ic_menu_manage"
