@@ -1,4 +1,4 @@
-package za.co.tombigtop.InvisibleDeckLearning;
+package za.co.tomjuggler.CoronaVirusSA;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,7 +12,7 @@ import processing.android.PFragment;
 import processing.core.PApplet;
 
 
-public class InvisibleDeckPractiserSpreadStarter extends AppCompatActivity {
+public class SpreadStarter extends AppCompatActivity {
     //for Processing sketch:
     private PApplet sketch;
 
@@ -34,7 +34,7 @@ public class InvisibleDeckPractiserSpreadStarter extends AppCompatActivity {
         setContentView(frame, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.MATCH_PARENT));
 
-        sketch = new InvisibleDeckPractiserSpread();
+        sketch = new Spread();
 
         PFragment fragment = new PFragment(sketch);
         fragment.setView(frame, this);

@@ -1,18 +1,6 @@
-package za.co.tombigtop.InvisibleDeckLearning;
+package za.co.tomjuggler.CoronaVirusSA;
 
 import processing.core.*;
-import processing.data.*;
-import processing.event.*;
-import processing.opengl.*;
-
-import java.util.HashMap;
-import java.util.ArrayList;
-import java.io.File;
-import java.io.BufferedReader;
-import java.io.PrintWriter;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.io.IOException;
 
 //import android.util.Log;
 //import android.view.MotionEvent;
@@ -25,7 +13,7 @@ import java.io.IOException;
 //import processing.data.IntList;
 //import processing.data.StringList;
 
-public class InvisibleDeckPractiser2 extends PApplet {
+public class Spread extends PApplet {
 
 
     int nDots = 200;
@@ -70,11 +58,11 @@ public class InvisibleDeckPractiser2 extends PApplet {
 
     public void draw() {
         if (finished) {
-            if (myColor == healthColor) {
-                background(healthColor, 255, 255, 255);
-            } else {
-                background(sickColor, 255, 255, 255);
-            }
+//            if (myColor == healthColor) {
+                background(255);
+//            } else {
+//                background(sickColor, 255, 255, 255);
+//            }
         } else {
             background(0);
         }
@@ -106,10 +94,10 @@ public class InvisibleDeckPractiser2 extends PApplet {
         health = 0;
         for (int i = 0; i < nDots; i++) {
             //check for health of all:
-            if (dotColor[i] == sickColor || dotColor[i] == recoverColor) {
+            if (dotColor[i] == recoverColor) {
                 health++;
                 //println(health);
-                if (health > 150) {
+                if (health > 180) {
                     finished = true;
                     println("finished");
                 }

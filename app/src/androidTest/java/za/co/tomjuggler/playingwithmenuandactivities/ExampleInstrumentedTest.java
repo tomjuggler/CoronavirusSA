@@ -1,4 +1,4 @@
-package za.co.tombigtop.playingwithmenuandactivities;
+package za.co.tomjuggler.playingwithmenuandactivities;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("za.co.tombigtop.playingwithmenuandactivities", appContext.getPackageName());
+        assertEquals("za.co.tomjuggler.playingwithmenuandactivities", appContext.getPackageName());
     }
 }

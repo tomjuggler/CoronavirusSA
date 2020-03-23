@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="za.co.tombigtop.InvisibleDeckLearning">
+    package="za.co.tomjuggler.CoronaVirusSA">
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
@@ -12,38 +12,38 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="za.co.tombigtop.InvisibleDeckLearning.WebActivity"
+            android:name="za.co.tomjuggler.CoronaVirusSA.WebActivity"
             android:label="@string/title_activity_web"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
-            android:name="za.co.tombigtop.InvisibleDeckLearning.InvisibleDeckPractiserStarter"
+            android:name="za.co.tomjuggler.CoronaVirusSA.MapStarter"
             android:label="@string/title_activity_test_1"
-            android:parentActivityName="za.co.tombigtop.InvisibleDeckLearning.MainActivity"
+            android:parentActivityName="za.co.tomjuggler.CoronaVirusSA.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="za.co.tombigtop.InvisibleDeckLearning.MainActivity" />
+                android:value="za.co.tomjuggler.CoronaVirusSA.MainActivity" />
         </activity>
         <activity
-            android:name="za.co.tombigtop.InvisibleDeckLearning.InvisibleDeckPractiser2Starter"
+            android:name="za.co.tomjuggler.CoronaVirusSA.SpreadStarter"
             android:label="@string/title_activity_test_2"
-            android:parentActivityName="za.co.tombigtop.InvisibleDeckLearning.MainActivity"
+            android:parentActivityName="za.co.tomjuggler.CoronaVirusSA.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="za.co.tombigtop.InvisibleDeckLearning.MainActivity" />
+                android:value="za.co.tomjuggler.CoronaVirusSA.MainActivity" />
         </activity>
         <activity
-            android:name="za.co.tombigtop.InvisibleDeckLearning.InvisibleDeckPractiserSpreadStarter"
+            android:name="za.co.tomjuggler.CoronaVirusSA.InvisibleDeckPractiserSpreadStarterOLD"
             android:label="@string/title_activity_test_3"
-            android:parentActivityName="za.co.tombigtop.InvisibleDeckLearning.MainActivity"
+            android:parentActivityName="za.co.tomjuggler.CoronaVirusSA.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="za.co.tombigtop.InvisibleDeckLearning.MainActivity" />
+                android:value="za.co.tomjuggler.CoronaVirusSA.MainActivity" />
         </activity>
         <activity
-            android:name="za.co.tombigtop.InvisibleDeckLearning.MainActivity"
+            android:name="za.co.tomjuggler.CoronaVirusSA.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>

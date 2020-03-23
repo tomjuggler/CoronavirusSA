@@ -1,4 +1,4 @@
-package za.co.tombigtop.InvisibleDeckLearning;
+package za.co.tomjuggler.CoronaVirusSA;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -83,15 +83,15 @@ public class MainActivity extends AppCompatActivity
             startActivity(intent);
             return true;
         } else if (id == R.id.nav_gallery) {
-            Intent intent = new Intent(getApplicationContext(), InvisibleDeckPractiserStarter.class);
+            Intent intent = new Intent(getApplicationContext(), MapStarter.class);
             startActivity(intent);
             return true;
         } else if (id == R.id.nav_slideshow) {
-            Intent intent = new Intent(getApplicationContext(), InvisibleDeckPractiser2Starter.class);
+            Intent intent = new Intent(getApplicationContext(), SpreadStarter.class);
             startActivity(intent);
             return true;
         } else if (id == R.id.nav_manage) {
-            Intent intent = new Intent(getApplicationContext(), InvisibleDeckPractiserSpreadStarter.class);
+            Intent intent = new Intent(getApplicationContext(), InvisibleDeckPractiserSpreadStarterOLD.class);
             startActivity(intent);
             return true;
         } else if (id == R.id.nav_share) {

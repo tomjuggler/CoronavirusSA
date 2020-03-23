@@ -1,22 +1,11 @@
-package za.co.tombigtop.InvisibleDeckLearning;
+package za.co.tomjuggler.CoronaVirusSA;
 
 
 import processing.core.*;
 import processing.data.*;
-import processing.event.*;
-import processing.opengl.*;
-
-import java.util.HashMap;
-import java.util.ArrayList;
-import java.io.File;
-import java.io.BufferedReader;
-import java.io.PrintWriter;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.io.IOException;
 
 
-public class InvisibleDeckPractiser extends PApplet {
+public class Map extends PApplet {
     Table table;
     String[] provinceNames = {"WC", "KZN", "GP", "MP", "LP", "NW", "FS", "EC", "NC"};
     int[] provinces = {0, 0, 0, 0, 0, 0, 0, 0, 0};
@@ -24,13 +13,13 @@ public class InvisibleDeckPractiser extends PApplet {
     int[] lon = {355, 210, 140, 125, 65, 145, 225, 315, 240};
 
     PImage map1;
-
+    int total = 0;
     public void setup() {
         size(sketchWidth(), sketchHeight());
         frameRate(60);
 
 //  colorMode(HSB, 255);
-        textSize(20);
+        textSize(25);
         map1 = loadImage("map.gif");
         background(0);
 //        image(map1, 0, 0);
@@ -42,7 +31,7 @@ public class InvisibleDeckPractiser extends PApplet {
         table = loadTable("https://raw.githubusercontent.com/dsfsi/covid19za/master/data/covid19za_timeline_confirmed.csv", "header, csv");
 
         for (TableRow row : table.rows()) {
-
+            total++;
             String num = row.getString("case_id");
             String province = row.getString("province");
 
@@ -71,6 +60,9 @@ public class InvisibleDeckPractiser extends PApplet {
 
 
         }
+        float latAdj = map(340, 0, 450, 0, width);
+        float lonAdj = map(350, 0, 383, 0, height);
+        text("TOTAL: " + total, latAdj, lonAdj);
     }
         public void draw () {
 

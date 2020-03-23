@@ -1,4 +1,4 @@
-package za.co.tombigtop.playingwithmenuandactivities;
+package za.co.tomjuggler.playingwithmenuandactivities;
 
 import org.junit.Test;
 

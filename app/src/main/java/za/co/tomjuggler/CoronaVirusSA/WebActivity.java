@@ -1,4 +1,4 @@
-package za.co.tombigtop.InvisibleDeckLearning;
+package za.co.tomjuggler.CoronaVirusSA;
 
 import android.app.Activity;
 import android.content.Context;
@@ -8,7 +8,7 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-import za.co.tombigtop.InvisibleDeckLearning.R;
+import za.co.tomjuggler.CoronaVirusSA.R;
 
 public class WebActivity extends Activity {
 

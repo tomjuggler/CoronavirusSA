@@ -1,4 +1,4 @@
-package za.co.tombigtop.InvisibleDeckLearning;
+package za.co.tomjuggler.CoronaVirusSA;
 
 import android.content.Intent;
 import android.net.Uri;

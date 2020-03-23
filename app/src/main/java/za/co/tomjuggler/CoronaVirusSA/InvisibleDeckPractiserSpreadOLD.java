@@ -1,4 +1,4 @@
-package za.co.tombigtop.InvisibleDeckLearning;
+package za.co.tomjuggler.CoronaVirusSA;
 
 
 import processing.core.*;
@@ -10,7 +10,7 @@ import processing.data.*;
 
 import java.util.ArrayList;
 
-public class InvisibleDeckPractiserSpread extends PApplet {
+public class InvisibleDeckPractiserSpreadOLD extends PApplet {
 
 
 //    KetaiGesture gesture;
