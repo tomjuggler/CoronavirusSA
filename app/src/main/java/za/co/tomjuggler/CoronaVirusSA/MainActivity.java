@@ -90,11 +90,13 @@ public class MainActivity extends AppCompatActivity
             Intent intent = new Intent(getApplicationContext(), SpreadStarter.class);
             startActivity(intent);
             return true;
-        } else if (id == R.id.nav_manage) {
-            Intent intent = new Intent(getApplicationContext(), InvisibleDeckPractiserSpreadStarterOLD.class);
-            startActivity(intent);
-            return true;
-        } else if (id == R.id.nav_share) {
+        }
+//        else if (id == R.id.nav_manage) {
+//            Intent intent = new Intent(getApplicationContext(), InvisibleDeckPractiserSpreadStarterOLD.class);
+//            startActivity(intent);
+//            return true;
+//        }
+        else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {
 

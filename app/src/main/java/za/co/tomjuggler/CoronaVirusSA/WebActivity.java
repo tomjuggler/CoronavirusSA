@@ -43,7 +43,7 @@ public class WebActivity extends Activity {
 //            mWebView.loadUrl("https://circusscientist.com");
 //            mWebView.loadUrl("https://www.circusscientist.com/2019/02/10/test-private-post");
             //center for disease control website here:
-            mWebView.loadUrl("http://www.nicd.ac.za/");
+            mWebView.loadUrl("https://www.circusscientist.com/coronalinksSA/");
             mWebView.setWebViewClient(new MyWebViewClient());
         }
         // REMOTE RESOURCE
