@@ -1,16 +1,22 @@
 package za.co.tomjuggler.CoronaVirusSA;
 
 
+
+
 import processing.core.*;
 import processing.data.*;
 
+//import http.requests.*; //this thing doesn't work well with Android
+//try remember how to use volley, I used that before for http get requests in another app
 
 public class Map extends PApplet {
+    JSONArray values;
+    JSONObject corona;
     Table table;
-    String[] provinceNames = {"WC", "KZN", "GP", "MP", "LP", "NW", "FS", "EC", "NC"};
-    int[] provinces = {0, 0, 0, 0, 0, 0, 0, 0, 0};
-    int[] lat = {110, 370, 305, 360, 325, 235, 250, 250, 130};
-    int[] lon = {355, 210, 140, 125, 65, 145, 225, 315, 240};
+    String[] provinceNames = {"WC", "KZN", "GP", "MP", "LP", "NW", "FS", "EC", "NC", "UNKNOWN", "total"};
+    int[] provinces = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+    int[] lat = {110, 370, 305, 360, 325, 235, 250, 250, 130, 290, 340};
+    int[] lon = {355, 210, 135, 125, 65, 145, 225, 315, 240, 370, 350};
 
     PImage map1;
     int total = 0;
@@ -18,6 +24,14 @@ public class Map extends PApplet {
         size(sketchWidth(), sketchHeight());
         frameRate(60);
 
+/////////////////////new total://////////////////////////////
+//        GetRequest get3 = new GetRequest("http://thevirustracker.com/free-api?countryTotal=ZA");
+//        get3.send(); // program will wait until the request is completed
+//        corona = parseJSONObject(get3.getContent());
+//        values = corona.getJSONArray("countrydata");
+//        JSONObject valueObj = values.getJSONObject(0);
+//        int newTotal = valueObj.getInt("total_cases");
+///////////////////////////now we have total////////////////////
 //  colorMode(HSB, 255);
         textSize(25);
         map1 = loadImage("map.gif");
@@ -27,24 +41,40 @@ public class Map extends PApplet {
         //background(map1);
         //offline for testing:
 //  table = loadTable("data.csv", "header, csv");
-        //online:
-        table = loadTable("https://raw.githubusercontent.com/dsfsi/covid19za/master/data/covid19za_timeline_confirmed.csv", "header, csv");
-
+        //new dsfsi data source
+        table = loadTable("https://raw.githubusercontent.com/dsfsi/covid19za/master/data/covid19za_provincial_cumulative_timeline_confirmed.csv", "header, csv");
         for (TableRow row : table.rows()) {
             total++;
-            String num = row.getString("case_id");
-            String province = row.getString("province");
-
-            for (int i = 0; i < provinces.length; i++) {
-                if (province.equals(provinceNames[i])) {
-                    provinces[i]++;
-                }
-            }
-            //test print all data:
-            println(num);
-            println("province: " + province);
-            println("");
         }
+        println(total);
+
+        TableRow row = table.getRow(total-1);
+//println(row);
+
+//while(!ready){
+        for(int i = 0; i < provinces.length; i++){
+            int provinceData = row.getInt(provinceNames[i]); //number of cases in eg EC loaded
+            provinces[i] = provinceData;
+            println(provinces[i]);
+        }
+        //online:
+//        table = loadTable("https://raw.githubusercontent.com/dsfsi/covid19za/master/data/covid19za_timeline_confirmed.csv", "header, csv");
+//
+//        for (TableRow row : table.rows()) {
+//            total++;
+//            String num = row.getString("case_id");
+//            String province = row.getString("province");
+//
+//            for (int i = 0; i < provinces.length; i++) {
+//                if (province.equals(provinceNames[i])) {
+//                    provinces[i]++;
+//                }
+//            }
+//            //test print all data:
+//            println(num);
+//            println("province: " + province);
+//            println("");
+//        }
 
 //  println(table.getRowCount() + " total rows in table");
         for (int i = 0; i < provinces.length; i++) {
@@ -60,9 +90,15 @@ public class Map extends PApplet {
 
 
         }
-        float latAdj = map(340, 0, 450, 0, width);
-        float lonAdj = map(350, 0, 383, 0, height);
-        text("TOTAL: " + total, latAdj, lonAdj);
+//        float latAdj = map(340, 0, 450, 0, width);
+//        float lonAdj = map(350, 0, 383, 0, height);
+//        text("TOTAL: " + total, latAdj, lonAdj);
+//        text("TOTAL: " + newTotal, latAdj, lonAdj);
+
+        //unknown
+        float latAdj2 = map(290, 0, 450, 0, width);
+        float lonAdj2 = map(370, 0, 383, 0, height);
+        text("unknown province:", latAdj2-240, lonAdj2);
     }
         public void draw () {
 
