@@ -25,6 +25,15 @@
                 android:value="za.co.tomjuggler.CoronaVirusSA.MainActivity" />
         </activity>
         <activity
+            android:name="za.co.tomjuggler.CoronaVirusSA.curveStarter"
+            android:label="@string/title_activity_test_3"
+            android:parentActivityName="za.co.tomjuggler.CoronaVirusSA.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="za.co.tomjuggler.CoronaVirusSA.MainActivity" />
+        </activity>
+        <activity
             android:name="za.co.tomjuggler.CoronaVirusSA.SpreadStarter"
             android:label="@string/title_activity_test_2"
             android:parentActivityName="za.co.tomjuggler.CoronaVirusSA.MainActivity"
