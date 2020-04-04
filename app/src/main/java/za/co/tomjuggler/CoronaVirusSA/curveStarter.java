@@ -24,10 +24,9 @@ public class curveStarter extends AppCompatActivity {
         //so toolbar not showing in this implementation. Makes it pretty redundant...
         //todo: what is minimum code to set this up showing Processing Sketch?
 //        Toolbar toolbar = findViewById(R.id.toolbar);
-
 //        setSupportActionBar(toolbar);
-
 //       getSupportActionBar().show();
+
         //from Processing Generated code:
         FrameLayout frame = new FrameLayout(this);
         frame.setId(CompatUtils.getUniqueViewId());

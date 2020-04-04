@@ -8,8 +8,6 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-import za.co.tomjuggler.CoronaVirusSA.R;
-
 public class WebActivity extends Activity {
 
     private WebView mWebView;
@@ -25,7 +23,7 @@ public class WebActivity extends Activity {
         // Force links and redirects to open in the WebView instead of in a browser
         mWebView.setWebViewClient(new WebViewClient());
 //        mWebView.setWebChromeClient(new WebChromeClient());
-        // Enable Javascript
+        // Enable Javascript (may need this?)
         WebSettings webSettings = mWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
 //        webSettings.setBuiltInZoomControls(true);
@@ -35,27 +33,16 @@ public class WebActivity extends Activity {
         //solution from https://stackoverflow.com/questions/17959561/android-how-to-prevent-webview-to-load-when-no-internet-connection
         //may be a better solution there.
         if (!checkInternetConnection(this)) {
-            // LOCAL RESOURCE
+            // OFFLINE, USE LOCAL RESOURCE:
             mWebView.loadUrl("file:///android_asset/site.htm");
         } else{
             //todo: test digitalocean hosted video play in webview.
             // REMOTE RESOURCE:
-//            mWebView.loadUrl("https://circusscientist.com");
-//            mWebView.loadUrl("https://www.circusscientist.com/2019/02/10/test-private-post");
-            //center for disease control website here:
+           //center for disease control website here:
             mWebView.loadUrl("https://www.circusscientist.com/coronalinksSA/");
             mWebView.setWebViewClient(new MyWebViewClient());
         }
-        // REMOTE RESOURCE
-//        mWebView.loadUrl("https://circusscientist.com");
-//        mWebView.setWebViewClient(new MyWebViewClient());
 
-        //need to have this as backup if no internet connection:
-
-        // LOCAL RESOURCE
-//         mWebView.loadUrl("file:///android_asset/site.htm");
-//         setContentView(mWebView);
-//        mWebView.setWebViewClient(new MyWebViewClient()); //not necessary?
     }
 
     // Prevent the back-button from closing the app

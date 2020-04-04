@@ -2,17 +2,6 @@ package za.co.tomjuggler.CoronaVirusSA;
 
 import processing.core.*;
 
-//import android.util.Log;
-//import android.view.MotionEvent;
-//
-//import java.util.ArrayList;
-//
-//import ketai.ui.KetaiGesture;
-//import processing.core.PApplet;
-//import processing.core.PImage;
-//import processing.data.IntList;
-//import processing.data.StringList;
-
 public class Spread extends PApplet {
 
 

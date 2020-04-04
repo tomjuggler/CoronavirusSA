@@ -2,14 +2,8 @@ package za.co.tomjuggler.CoronaVirusSA;
 
 import processing.core.*;
 import processing.data.*;
-//import processing.core.PApplet;
-//import processing.core.PImage;
-//import processing.data.Table;
-//import processing.data.TableRow;
+//
 import org.gicentre.utils.stat.*;
-
-//import http.requests.*; //this thing doesn't work well with Android
-//try remember how to use volley, I used that before for http get requests in another app
 
 public class curve extends PApplet {
     Table table;
@@ -24,10 +18,8 @@ public class curve extends PApplet {
 
     public void setup() {
         barChart = new BarChart(this);
-
         total = 0; //double check we get this right at the start
-        noLoop(); //new try this
-//size(640, 480);
+        noLoop(); // not really necessary
         size(sketchWidth(), sketchHeight());
         textSize(20);
         background(0);
