@@ -52,6 +52,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="za.co.tomjuggler.CoronaVirusSA.SettingsWebActivity"
+            android:label="@string/title_settings_activity_web"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
-
 </manifest>

@@ -10,6 +10,7 @@
     <string name="title_activity_test_2">Activity_test_2</string>
     <string name="title_activity_test_3">Activity_test_3</string>
     <string name="title_activity_web">WebActivity</string>
+    <string name="title_settings_activity_web">SettingsWebActivity</string>
     <string name="content_main_content">
         The Corona Virus is a dangerous pandemic.\n
 
