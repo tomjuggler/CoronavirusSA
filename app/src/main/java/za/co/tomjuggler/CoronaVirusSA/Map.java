@@ -40,7 +40,8 @@ public class Map extends PApplet {
 //        int newTotal = valueObj.getInt("total_cases");
 ///////////////////////////now we have total////////////////////
 //  colorMode(HSB, 255);
-        textSize(25);
+        textSize(28);
+        fill(255);
         map1 = loadImage("map.gif");
         background(0);
 //        image(map1, 0, 0);
@@ -85,7 +86,7 @@ public class Map extends PApplet {
 
 //  println(table.getRowCount() + " total rows in table");
         for (int i = 0; i < provinces.length; i++) {
-            fill(0);
+            fill(255);
 //  text("total " + provinceNames[i] + ": " + provinces[i], 20, 30*i+30);
             float latAdj = map(lat[i], 0, 450, 0, width);
             float lonAdj = map(lon[i], 0, 383, 0, height);
@@ -103,35 +104,51 @@ public class Map extends PApplet {
 //        text("TOTAL: " + newTotal, latAdj, lonAdj);
 
         //unknown
+        fill(0);
         float latAdj2 = map(290, 0, 450, 0, width);
         float lonAdj2 = map(370, 0, 383, 0, height);
         text("unknown province:", latAdj2-240, lonAdj2);
     }
         public void draw () {
+            preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
             if(mousePressed){
-                preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
-                province++;
-                if(province > provinceNames.length -1){
-                    province = 0;
-                }
-                SharedPreferences.Editor editor = preferences.edit();
-                editor.putInt("Province",province); //next province - now reload?
-                editor.apply();
-            }
-            for (int i = 0; i < provinces.length; i++) {
-                if (i == province) { //selected province is red!
-                    fill(255, 0, 0);
+                for (int i = 0; i < provinces.length; i++) {
                     float latAdj = map(lat[i], 0, 450, 0, width);
                     float lonAdj = map(lon[i], 0, 383, 0, height);
+                    if(over(latAdj-50, lonAdj-50, 150, 100)){ //over text area
+                        println("over " + i);
+                        province = i;
+                        SharedPreferences.Editor editor = preferences.edit();
+                        editor.putInt("Province",i); //next province - now reload?
+                        editor.apply();
+                    }
+                }
+//                province++;
+//                if(province > provinceNames.length -1){
+//                    province = 0;
+//                }
+//                SharedPreferences.Editor editor = preferences.edit();
+//                editor.putInt("Province",province); //next province - now reload?
+//                editor.apply();
+            }
+            for (int i = 0; i < provinces.length; i++) {
+                if (i == province) { //selected province is blue!
+                    float latAdj = map(lat[i], 0, 450, 0, width);
+                    float lonAdj = map(lon[i], 0, 383, 0, height);
+                    fill(255, 0, 0);
                     text(provinces[i], latAdj, lonAdj);
                 } else{
-                    fill(0);
+                    fill(0); //all other provinces black
                     float latAdj = map(lat[i], 0, 450, 0, width);
                     float lonAdj = map(lon[i], 0, 383, 0, height);
                     text(provinces[i], latAdj, lonAdj);
                 }
             }
         }
+
+    public boolean over(float x, float y, int w, int h) {
+        return (mouseX > x && mouseX < x + w && mouseY > y && mouseY < y + h);
+    } // func
 
 
     }

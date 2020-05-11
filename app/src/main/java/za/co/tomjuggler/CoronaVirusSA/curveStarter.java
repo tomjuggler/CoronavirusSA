@@ -2,7 +2,9 @@ package za.co.tomjuggler.CoronaVirusSA;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.NavigationView;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -26,6 +28,7 @@ public class curveStarter extends AppCompatActivity {
 //        Toolbar toolbar = findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);
 //       getSupportActionBar().show();
+
 
         //from Processing Generated code:
         FrameLayout frame = new FrameLayout(this);

@@ -12,20 +12,19 @@
     <string name="title_activity_web">WebActivity</string>
     <string name="title_settings_activity_web">SettingsWebActivity</string>
     <string name="content_main_content">
-        The Corona Virus is a dangerous pandemic.\n
-
-        This app contains a MAP and simulation of disease SPREAD for South Africa\n
-
-        I take no responsibility for any action taken in response to this app\n
-        Please use official channels to get proper information\n
-
-        Statistics on the MAP are from the University of Pretoria.\n
-        Currently stats are updated daily.\n
-        CURVE shows the increase in detected cases. \n
+        HOW TO USE THIS APP:\n
+        MAP: total number of cases grouped by province\n
+        (South Africa total is included)\n
+        Tap on a province to select which is shown in CURVE \n
+        CURVE: shows the increase in detected cases, for the selected province. \n
         SPREAD simulation is meant to show how hard it is to avoid getting infected\n
         So stay home guys\n
+        \n
+        Statistics on the MAP are from the University of Pretoria.\n
+        Currently stats are updated daily.\n
 
-        Above all\:\n
-        don\'t forget to wash your hands guys and stay safe
+
+
+        Above all: Don\'t forget to wash your hands and stay safe!
     </string>
 </resources>

@@ -45,7 +45,7 @@ public class curve extends PApplet {
         }
         //println(risingTotal);
         barChart.setData(risingTotal);
-        barChart.setBarColour(color(200,80,80,100));
+        barChart.setBarColour(color(255, 0, 0));
         barChart.setBarGap(2);
         barChart.showValueAxis(true);
         barChart.showCategoryAxis(false);
@@ -57,7 +57,11 @@ public class curve extends PApplet {
         int y = year();   // 2003, 2004, 2005, etc.
 
         fill(120);
-        text("Daily Increase in Cases for " + provinceNames[province] +   " Up until " + d + "/" + m + "/" + y, 120, 30);
+        if(province == 10){ //South Africa total
+            text("Daily Increase in Cases for " + "South Africa" +   " Up until " + d + "/" + m + "/" + y, 120, 30);
+        }else {
+            text("Daily Increase in Cases for " + provinceNames[province] + " Up until " + d + "/" + m + "/" + y, 120, 30);
+        }
     }
         public void draw () {
 //if(mousePressed){
