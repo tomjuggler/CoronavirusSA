@@ -3,6 +3,9 @@ package za.co.tomjuggler.CoronaVirusSA;
 
 
 
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
+
 import processing.core.*;
 import processing.data.*;
 
@@ -20,10 +23,14 @@ public class Map extends PApplet {
 
     PImage map1;
     int total = 0;
+    SharedPreferences preferences;
+    int province;
     public void setup() {
         size(sketchWidth(), sketchHeight());
         frameRate(60);
-
+//load saved province
+        preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
+        province = preferences.getInt("Province", 0);
 /////////////////////new total://////////////////////////////
 //        GetRequest get3 = new GetRequest("http://thevirustracker.com/free-api?countryTotal=ZA");
 //        get3.send(); // program will wait until the request is completed
@@ -101,7 +108,30 @@ public class Map extends PApplet {
         text("unknown province:", latAdj2-240, lonAdj2);
     }
         public void draw () {
-
+            if(mousePressed){
+                preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
+                province++;
+                if(province > provinceNames.length -1){
+                    province = 0;
+                }
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.putInt("Province",province); //next province - now reload?
+                editor.apply();
+            }
+            for (int i = 0; i < provinces.length; i++) {
+                if (i == province) { //selected province is red!
+                    fill(255, 0, 0);
+                    float latAdj = map(lat[i], 0, 450, 0, width);
+                    float lonAdj = map(lon[i], 0, 383, 0, height);
+                    text(provinces[i], latAdj, lonAdj);
+                } else{
+                    fill(0);
+                    float latAdj = map(lat[i], 0, 450, 0, width);
+                    float lonAdj = map(lon[i], 0, 383, 0, height);
+                    text(provinces[i], latAdj, lonAdj);
+                }
+            }
         }
+
 
     }

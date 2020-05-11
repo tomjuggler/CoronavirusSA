@@ -1,5 +1,8 @@
 package za.co.tomjuggler.CoronaVirusSA;
 
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
+
 import processing.core.*;
 import processing.data.*;
 //
@@ -16,10 +19,16 @@ public class curve extends PApplet {
 
     BarChart barChart;
 
+    int province = 1;
+    SharedPreferences preferences;
+
     public void setup() {
+        //load saved province
+        preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
+        province = preferences.getInt("Province", 0);
         barChart = new BarChart(this);
         total = 0; //double check we get this right at the start
-        noLoop(); // not really necessary
+//        noLoop(); // not really necessary
         size(sketchWidth(), sketchHeight());
         textSize(20);
         background(0);
@@ -28,7 +37,7 @@ public class curve extends PApplet {
         table = loadTable("https://raw.githubusercontent.com/dsfsi/covid19za/master/data/covid19za_provincial_cumulative_timeline_confirmed.csv", "header, csv");
         for (TableRow row : table.rows()) {
             total++;
-            float nextTotal = row.getInt(provinceNames[provinceNames.length-1]);
+            float nextTotal = row.getInt(provinceNames[province]);
             //println(total + ": " + nextTotal);
             if(nextTotal > 0){
                 risingTotal = append(risingTotal, nextTotal);
@@ -48,10 +57,18 @@ public class curve extends PApplet {
         int y = year();   // 2003, 2004, 2005, etc.
 
         fill(120);
-        text("Daily Increase in Cases Up until " + d + "/" + m + "/" + y, 120, 30);
+        text("Daily Increase in Cases for " + provinceNames[province] +   " Up until " + d + "/" + m + "/" + y, 120, 30);
     }
         public void draw () {
-
-        }
+//if(mousePressed){
+//    province++;
+//    if(province > provinceNames.length -1){
+//        province = 0;
+//    }
+//    SharedPreferences.Editor editor = preferences.edit();
+//    editor.putInt("Province",province); //next province - now reload?
+//    editor.apply();
+//}
+       }
 
     }
