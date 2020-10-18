@@ -3,6 +3,7 @@ package za.co.tomjuggler.CoronaVirusSA;
 
 
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
@@ -121,6 +122,9 @@ public class Map extends PApplet {
                         SharedPreferences.Editor editor = preferences.edit();
                         editor.putInt("Province",i); //next province - now reload?
                         editor.apply();
+                        //open province curve now!
+                        Intent intent = new Intent(getActivity().getApplicationContext(), curveStarter.class);
+                        startActivity(intent);
                     }
                 }
 //                province++;

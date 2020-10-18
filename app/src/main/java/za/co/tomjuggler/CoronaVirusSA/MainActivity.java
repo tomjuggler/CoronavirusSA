@@ -42,8 +42,8 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
 //start with map?
-//        Intent intent = new Intent(getApplicationContext(), MapStarter.class);
-//        startActivity(intent);
+        Intent intent = new Intent(getApplicationContext(), MapStarter.class);
+        startActivity(intent);
     }
 
     @Override

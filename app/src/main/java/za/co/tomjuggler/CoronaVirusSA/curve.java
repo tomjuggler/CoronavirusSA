@@ -1,6 +1,8 @@
 package za.co.tomjuggler.CoronaVirusSA;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Bundle;
 import android.preference.PreferenceManager;
 
 import processing.core.*;
@@ -9,16 +11,30 @@ import processing.data.*;
 import org.gicentre.utils.stat.*;
 
 public class curve extends PApplet {
+//    @Override
+//    public void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//
+//    }
+//    @Override
+//    public void onBackPressed() {
+//        super.onBackPressed();
+//        Intent intent = new Intent(getActivity().getApplicationContext(), MapStarter.class);
+//        startActivity(intent);
+//    }
+
     Table table;
     String[] provinceNames = {"WC", "KZN", "GP", "MP", "LP", "NW", "FS", "EC", "NC", "UNKNOWN", "total"};
     int total = 0;
 
-    float[] risingTotal= {0};
+    float[] risingTotal = {0};
 
     PImage map1;
 
     BarChart barChart;
-
+    BarChart barChart2;
+    float[] dailyTotal = {0};
+    float thisTotal = 0;
     int province = 1;
     SharedPreferences preferences;
 
@@ -27,6 +43,7 @@ public class curve extends PApplet {
         preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
         province = preferences.getInt("Province", 0);
         barChart = new BarChart(this);
+        barChart2 = new BarChart(this);
         total = 0; //double check we get this right at the start
 //        noLoop(); // not really necessary
         size(sketchWidth(), sketchHeight());
@@ -36,12 +53,19 @@ public class curve extends PApplet {
         //online:
         table = loadTable("https://raw.githubusercontent.com/dsfsi/covid19za/master/data/covid19za_provincial_cumulative_timeline_confirmed.csv", "header, csv");
         for (TableRow row : table.rows()) {
-            total++;
+
             float nextTotal = row.getInt(provinceNames[province]);
             //println(total + ": " + nextTotal);
-            if(nextTotal > 0){
+            if (nextTotal > 0) {
+                total++;
                 risingTotal = append(risingTotal, nextTotal);
+//                if(total>2) {
+                thisTotal = nextTotal - risingTotal[total - 1];
+                dailyTotal = append(dailyTotal, thisTotal);
+                println("thisTotal is: " + thisTotal);
             }
+
+//        }
         }
         //println(risingTotal);
         barChart.setData(risingTotal);
@@ -50,7 +74,15 @@ public class curve extends PApplet {
         barChart.showValueAxis(true);
         barChart.showCategoryAxis(false);
 
-        barChart.draw(10,10,width-20,height-20);
+        barChart.draw(10,10,width-20,height/2-20);
+
+        barChart2.setData(dailyTotal);
+        barChart2.setBarColour(color(100, 140, 255));
+        barChart2.setBarGap(2);
+        barChart2.showValueAxis(true);
+        barChart2.showCategoryAxis(false);
+
+        barChart2.draw(10,height/2,width-20,height/2-20);
 
         int d = day();    // Values from 1 - 31
         int m = month();  // Values from 1 - 12
@@ -62,6 +94,8 @@ public class curve extends PApplet {
         }else {
             text("Daily Increase in Cases for " + provinceNames[province] + " Up until " + d + "/" + m + "/" + y, 120, 30);
         }
+        text("Daily Cases for " + provinceNames[province] + " Up until " + d + "/" + m + "/" + y, width+10, height/2);
+
     }
         public void draw () {
 //if(mousePressed){
@@ -73,6 +107,10 @@ public class curve extends PApplet {
 //    editor.putInt("Province",province); //next province - now reload?
 //    editor.apply();
 //}
+       }
+       public void mousePressed(){
+           Intent intent = new Intent(getActivity().getApplicationContext(), MapStarter.class);
+           startActivity(intent);
        }
 
     }
