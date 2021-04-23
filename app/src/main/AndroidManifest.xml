@@ -14,12 +14,14 @@
         <activity
             android:name="za.co.tomjuggler.CoronaVirusSA.WebActivity"
             android:label="@string/title_activity_web"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar">
+        </activity>
         <activity
             android:name="za.co.tomjuggler.CoronaVirusSA.MapStarter"
             android:label="@string/title_activity_test_1"
             android:parentActivityName="za.co.tomjuggler.CoronaVirusSA.MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar">
+<!--            android:theme="@style/AppTheme.NoActionBar">-->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="za.co.tomjuggler.CoronaVirusSA.MainActivity" />
@@ -28,7 +30,8 @@
             android:name="za.co.tomjuggler.CoronaVirusSA.curveStarter"
             android:label="@string/title_activity_test_3"
             android:parentActivityName="za.co.tomjuggler.CoronaVirusSA.MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar">
+        <!--            android:theme="@style/AppTheme.NoActionBar">-->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="za.co.tomjuggler.CoronaVirusSA.MainActivity" />
@@ -37,7 +40,7 @@
             android:name="za.co.tomjuggler.CoronaVirusSA.SpreadStarter"
             android:label="@string/title_activity_test_2"
             android:parentActivityName="za.co.tomjuggler.CoronaVirusSA.MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="za.co.tomjuggler.CoronaVirusSA.MainActivity" />
@@ -55,6 +58,7 @@
         <activity
             android:name="za.co.tomjuggler.CoronaVirusSA.SettingsWebActivity"
             android:label="@string/title_settings_activity_web"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar">
+        </activity>
     </application>
 </manifest>

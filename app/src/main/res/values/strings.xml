@@ -2,14 +2,14 @@
     <string name="app_name">CoronaVirusSA</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Stats and Information about corvid19</string>
+    <string name="nav_header_title">Stats and Information about Covid19</string>
     <string name="nav_header_subtitle">circusscientist.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_test_1">Activity_test_1</string>
-    <string name="title_activity_test_2">Activity_test_2</string>
-    <string name="title_activity_test_3">Activity_test_3</string>
-    <string name="title_activity_web">WebActivity</string>
+    <string name="title_activity_test_1">Map</string>
+    <string name="title_activity_test_2">Spread simulator</string>
+    <string name="title_activity_test_3">Curve</string>
+    <string name="title_activity_web">Links</string>
     <string name="title_settings_activity_web">SettingsWebActivity</string>
     <string name="content_main_content">
         HOW TO USE THIS APP:\n
@@ -18,7 +18,7 @@
         Tap on a province to select which is shown in CURVE \n
         CURVE: shows the increase in detected cases, for the selected province. \n
         SPREAD simulation is meant to show how hard it is to avoid getting infected\n
-        So stay home guys\n
+        So wear your mask guys\n
         \n
         Statistics on the MAP are from the University of Pretoria.\n
         Currently stats are updated daily.\n

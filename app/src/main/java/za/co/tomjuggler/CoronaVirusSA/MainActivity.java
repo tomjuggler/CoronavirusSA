@@ -42,8 +42,8 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
 //start with map?
-        Intent intent = new Intent(getApplicationContext(), MapStarter.class);
-        startActivity(intent);
+//        Intent intent = new Intent(getApplicationContext(), MapStarter.class);
+//        startActivity(intent);
     }
 
     @Override
@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
+            drawer.openDrawer((GravityCompat.START));
             super.onBackPressed();
         }
     }

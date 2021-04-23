@@ -24,6 +24,7 @@ public class curve extends PApplet {
 //    }
 
     Table table;
+    Table deathTable;
     String[] provinceNames = {"WC", "KZN", "GP", "MP", "LP", "NW", "FS", "EC", "NC", "UNKNOWN", "total"};
     int total = 0;
 
@@ -67,10 +68,11 @@ public class curve extends PApplet {
 
 //        }
         }
+        deathTable = loadTable("https://raw.githubusercontent.com/dsfsi/covid19za/master/data/covid19za_provincial_cumulative_timeline_confirmed.csv", "header, csv");
         //println(risingTotal);
         barChart.setData(risingTotal);
         barChart.setBarColour(color(255, 0, 0));
-        barChart.setBarGap(2);
+        barChart.setBarGap(0);
         barChart.showValueAxis(true);
         barChart.showCategoryAxis(false);
 
@@ -78,7 +80,7 @@ public class curve extends PApplet {
 
         barChart2.setData(dailyTotal);
         barChart2.setBarColour(color(100, 140, 255));
-        barChart2.setBarGap(2);
+        barChart2.setBarGap(0);
         barChart2.showValueAxis(true);
         barChart2.showCategoryAxis(false);
 
@@ -112,5 +114,8 @@ public class curve extends PApplet {
            Intent intent = new Intent(getActivity().getApplicationContext(), MapStarter.class);
            startActivity(intent);
        }
-
+    @Override
+    public void onBackPressed(){
+        super.onBackPressed();
+    }
     }

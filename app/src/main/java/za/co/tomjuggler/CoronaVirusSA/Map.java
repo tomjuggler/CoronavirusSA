@@ -154,5 +154,8 @@ public class Map extends PApplet {
         return (mouseX > x && mouseX < x + w && mouseY > y && mouseY < y + h);
     } // func
 
-
+    @Override
+    public void onBackPressed(){
+        super.onBackPressed();
+    }
     }
