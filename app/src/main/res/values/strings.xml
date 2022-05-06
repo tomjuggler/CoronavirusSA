@@ -12,19 +12,23 @@
     <string name="title_activity_web">Links</string>
     <string name="title_settings_activity_web">SettingsWebActivity</string>
     <string name="content_main_content">
-        HOW TO USE THIS APP:\n
-        MAP: total number of cases grouped by province\n
-        (South Africa total is included)\n
-        Tap on a province to select which is shown in CURVE \n
-        CURVE: shows the increase in detected cases, for the selected province. \n
-        SPREAD simulation is meant to show how hard it is to avoid getting infected\n
-        So wear your mask guys\n
+        HOW TO USE THIS APP: \n
         \n
-        Statistics on the MAP are from the University of Pretoria.\n
-        Currently stats are updated daily.\n
-
-
-
-        Above all: Don\'t forget to wash your hands and stay safe!
+        MAP: total number of cases grouped by province \n
+        (South Africa total is included) \n
+        \n
+        Tap on a province to select which is shown in CURVE \n
+        \n
+        CURVE: shows the increase in detected cases, for the selected province. \n
+        \n
+        Tap on curve to go back to map \n
+        \n
+        SPREAD simulation is meant to show how hard it is to avoid getting infected \n
+        So wear your mask and get vaccinated. \n
+        \n
+        Statistics on the MAP are from the University of Pretoria. \n
+        Currently stats are updated daily. \n
+        \n
+        Stay safe!
     </string>
 </resources>
