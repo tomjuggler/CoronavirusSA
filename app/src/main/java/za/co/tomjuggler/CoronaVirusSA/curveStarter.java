@@ -8,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.Toast;
 
 import processing.android.CompatUtils;
 import processing.android.PFragment;
@@ -17,6 +18,8 @@ import processing.core.PApplet;
 public class curveStarter extends AppCompatActivity {
     //for Processing sketch:
     private PApplet sketch;
+
+    private long pressedTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +47,19 @@ public class curveStarter extends AppCompatActivity {
 //        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 //        getSupportActionBar().show();
     }
+
+    @Override
+    public void onBackPressed() {
+
+        if (pressedTime + 2000 > System.currentTimeMillis()) {
+            super.onBackPressed();
+            finish();
+        } else {
+            Toast.makeText(getBaseContext(), "Press back again to exit", Toast.LENGTH_SHORT).show();
+        }
+        pressedTime = System.currentTimeMillis();
+    }
+
     @Override
     public void onNewIntent(Intent intent) {
         if (sketch != null) {

@@ -16,7 +16,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
+    private long pressedTime;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,20 +42,28 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
 //start with map?
-//        Intent intent = new Intent(getApplicationContext(), MapStarter.class);
-//        startActivity(intent);
+        Intent intent = new Intent(getApplicationContext(), MapStarter.class);
+        startActivity(intent);
     }
 
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            drawer.openDrawer((GravityCompat.START));
+        if (pressedTime + 2000 > System.currentTimeMillis()) {
             super.onBackPressed();
+            finish();
+        } else {
+            if (drawer.isDrawerOpen(GravityCompat.START)) {
+                drawer.closeDrawer(GravityCompat.START);
+            } else {
+                drawer.openDrawer((GravityCompat.START));
+                super.onBackPressed();
+            }
         }
+        pressedTime = System.currentTimeMillis();
     }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

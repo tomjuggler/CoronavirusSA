@@ -92,11 +92,11 @@ public class curve extends PApplet {
 
         fill(120);
         if(province == 10){ //South Africa total
-            text("Daily Increase in Cases for " + "South Africa" +   " Up until " + d + "/" + m + "/" + y, 120, 30);
+            text("                  Daily Increase in Cases for " + "South Africa" +   " Up until " + d + "/" + m + "/" + y, 120, 30);
         }else {
-            text("Daily Increase in Cases for " + provinceNames[province] + " Up until " + d + "/" + m + "/" + y, 120, 30);
+            text("           Daily Increase in Cases for " + provinceNames[province] + " Up until " + d + "/" + m + "/" + y, 120, 30);
         }
-        text("Daily Cases for " + provinceNames[province] + " Up until " + d + "/" + m + "/" + y, width+10, height/2);
+        text("             Daily Cases for " + provinceNames[province] + " Up until " + d + "/" + m + "/" + y, width+10, height/2);
 
     }
         public void draw () {
@@ -111,6 +111,8 @@ public class curve extends PApplet {
 //}
        }
        public void mousePressed(){
+           //close old activity?
+           getActivity().finish();
            Intent intent = new Intent(getActivity().getApplicationContext(), MapStarter.class);
            startActivity(intent);
        }

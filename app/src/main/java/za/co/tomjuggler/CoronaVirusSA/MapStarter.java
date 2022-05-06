@@ -12,11 +12,14 @@ import processing.android.PFragment;
 import processing.android.CompatUtils;
 import processing.core.PApplet;
 import za.co.tomjuggler.CoronaVirusSA.R;
+import android.widget.Toast;
 
 
 public class MapStarter extends AppCompatActivity {
     //for Processing sketch:
     private PApplet sketch;
+
+    private long pressedTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +47,19 @@ public class MapStarter extends AppCompatActivity {
 //        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 //        getSupportActionBar().show();
     }
+
+    @Override
+    public void onBackPressed() {
+
+        if (pressedTime + 2000 > System.currentTimeMillis()) {
+            super.onBackPressed();
+            finish();
+        } else {
+            Toast.makeText(getBaseContext(), "Press back again to exit", Toast.LENGTH_SHORT).show();
+        }
+        pressedTime = System.currentTimeMillis();
+    }
+
     @Override
     public void onNewIntent(Intent intent) {
         if (sketch != null) {
