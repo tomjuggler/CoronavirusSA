@@ -11,17 +11,6 @@ import processing.data.*;
 import org.gicentre.utils.stat.*;
 
 public class curve extends PApplet {
-//    @Override
-//    public void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//
-//    }
-//    @Override
-//    public void onBackPressed() {
-//        super.onBackPressed();
-//        Intent intent = new Intent(getActivity().getApplicationContext(), MapStarter.class);
-//        startActivity(intent);
-//    }
 
     Table table;
     Table deathTable;
@@ -60,14 +49,14 @@ public class curve extends PApplet {
             if (nextTotal > 0) {
                 total++;
                 risingTotal = append(risingTotal, nextTotal);
-//                if(total>2) {
                 thisTotal = nextTotal - risingTotal[total - 1];
                 dailyTotal = append(dailyTotal, thisTotal);
-                println("thisTotal is: " + thisTotal);
+//                println("thisTotal is: " + thisTotal);
             }
 
 //        }
         }
+        //not showing deaths - too depressing
         deathTable = loadTable("https://raw.githubusercontent.com/dsfsi/covid19za/master/data/covid19za_provincial_cumulative_timeline_confirmed.csv", "header, csv");
         //println(risingTotal);
         barChart.setData(risingTotal);
@@ -100,18 +89,10 @@ public class curve extends PApplet {
 
     }
         public void draw () {
-//if(mousePressed){
-//    province++;
-//    if(province > provinceNames.length -1){
-//        province = 0;
-//    }
-//    SharedPreferences.Editor editor = preferences.edit();
-//    editor.putInt("Province",province); //next province - now reload?
-//    editor.apply();
-//}
+
        }
        public void mousePressed(){
-           //close old activity?
+           //finish activity:
            getActivity().finish();
            Intent intent = new Intent(getActivity().getApplicationContext(), MapStarter.class);
            startActivity(intent);

@@ -26,9 +26,9 @@ public class SettingsWebActivity extends Activity {
         // Force links and redirects to open in the WebView instead of in a browser
         mWebView.setWebViewClient(new WebViewClient());
         WebSettings webSettings = mWebView.getSettings();
-        webSettings.setJavaScriptEnabled(false);//        webSettings.setBuiltInZoomControls(true);
-         mWebView.loadUrl("file:///android_asset/settings.htm");
-         //hmmm download?////////////////////////////////////////////////
+        webSettings.setJavaScriptEnabled(false);
+//      webSettings.setBuiltInZoomControls(true);
+        mWebView.loadUrl("file:///android_asset/settings.htm");
         mWebView.setDownloadListener(new DownloadListener() {
             public void onDownloadStart(String url, String userAgent,
                                         String contentDisposition, String mimetype,
@@ -38,7 +38,6 @@ public class SettingsWebActivity extends Activity {
                 startActivity(i);
             }
         });
-        //////////////////////////////////////////////////////////////////
     }
 
     // Prevent the back-button from closing the app

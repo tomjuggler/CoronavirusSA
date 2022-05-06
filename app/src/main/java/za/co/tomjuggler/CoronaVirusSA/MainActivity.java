@@ -20,11 +20,12 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//shared preferences start:
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
-//        SharedPreferences.Editor editor = preferences.edit();
-//        editor.putInt("Province",0);
-//        editor.apply();
+
+//      shared preferences - not using:
+//      SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+//      SharedPreferences.Editor editor = preferences.edit();
+//      editor.putInt("Province",0);
+//      editor.apply();
 
         setContentView(R.layout.activity_main);
 
@@ -41,9 +42,9 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-//start with map?
-        Intent intent = new Intent(getApplicationContext(), MapStarter.class);
-        startActivity(intent);
+//      start with map?:
+//        Intent intent = new Intent(getApplicationContext(), MapStarter.class);
+//        startActivity(intent);
     }
 
     @Override

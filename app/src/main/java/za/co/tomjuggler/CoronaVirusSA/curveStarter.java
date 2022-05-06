@@ -25,15 +25,7 @@ public class curveStarter extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-//        setContentView(R.layout.activity_test_1);
-        //so toolbar not showing in this implementation. Makes it pretty redundant...
-        //todo: what is minimum code to set this up showing Processing Sketch?
-//        Toolbar toolbar = findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
-//       getSupportActionBar().show();
-
-
-        //from Processing Generated code:
+//      from Processing Generated code:
         FrameLayout frame = new FrameLayout(this);
         frame.setId(CompatUtils.getUniqueViewId());
         setContentView(frame, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
@@ -44,8 +36,6 @@ public class curveStarter extends AppCompatActivity {
         PFragment fragment = new PFragment(sketch);
         fragment.setView(frame, this);
 
-//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-//        getSupportActionBar().show();
     }
 
     @Override
